@@ -10,6 +10,10 @@
 <link rel="alternate" hreflang="en" href="https://wearetreed.com/en/">
 <link rel="alternate" hreflang="de" href="https://wearetreed.com/de/">
 <link rel="alternate" hreflang="x-default" href="https://wearetreed.com/">
+<link rel="alternate" hreflang="cs" href="https://wearetreed.com/">
+<link rel="alternate" hreflang="en" href="https://wearetreed.com/en/">
+<link rel="alternate" hreflang="de" href="https://wearetreed.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://wearetreed.com/">
 
 <!-- Open Graph / LinkedIn / Facebook -->
 <meta property="og:type" content="website">
@@ -359,6 +363,27 @@ footer * { color: var(--cream); }
 .sticky-cta .btn { width: 100%; justify-content: center; padding: 16px; box-shadow: 0 10px 30px rgba(46, 75, 30, 0.25); }
 @media (max-width: 720px) { .sticky-cta { display: block; } }
 </style>
+
+<script>
+(function () {
+  try {
+    if (sessionStorage.getItem('lang_redirected')) return;
+    sessionStorage.setItem('lang_redirected', '1');
+    var prefStored = localStorage.getItem('lang_pref');
+    if (prefStored === 'cs') return;
+    var preferred = prefStored;
+    if (!preferred) {
+      var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (navLang.startsWith('en')) preferred = 'en';
+      else if (navLang.startsWith('de')) preferred = 'de';
+      else preferred = 'cs';
+    }
+    if (preferred === 'en') location.replace('/en/');
+    else if (preferred === 'de') location.replace('/de/');
+  } catch (e) {}
+})();
+</script>
+
 
 <script>
 (function () {
@@ -976,6 +1001,16 @@ async function handleSubmit(e) {
     status.textContent = 'Odeslání selhalo. Napište nám prosím přímo na ahoj@wearetreed.com.';
   }
 }
+</script>
+
+
+<script>
+document.querySelectorAll('.lang a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    var lang = (a.getAttribute('hreflang') || 'cs');
+    try { localStorage.setItem('lang_pref', lang); } catch (e) {}
+  });
+});
 </script>
 
 
