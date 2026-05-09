@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wearetreed | Hochwertige individuelle Firmengeschenke</title>
+<meta name="description" content="Unvergessliche Firmengeschenke aus tschechischem Holz. Wir entwerfen, fertigen, verpacken und liefern. Familienwerkstatt in der Region Šumperk.">
+<link rel="canonical" href="https://wearetreed.com/">
+<link rel="alternate" hreflang="cs" href="https://wearetreed.com/">
+<link rel="alternate" hreflang="en" href="https://wearetreed.com/en/">
+<link rel="alternate" hreflang="de" href="https://wearetreed.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://wearetreed.com/">
+
+<!-- Open Graph / LinkedIn / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="wearetreed">
+<meta property="og:title" content="Unvergessliche individuelle Firmengeschenke">
+<meta property="og:description" content="Holz-Firmengeschenke mit Ihrem Logo aus einer Familienwerkstatt in der Region Šumperk. Wir entwerfen, fertigen, verpacken, liefern.">
+<meta property="og:url" content="https://wearetreed.com/">
+<meta property="og:image" content="https://wearetreed.com/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1280">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unvergessliche individuelle Firmengeschenke">
+<meta name="twitter:description" content="Holz-Firmengeschenke mit Ihrem Logo aus einer Familienwerkstatt in der Region Šumperk.">
+<meta name="twitter:image" content="https://wearetreed.com/images/hero.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="theme-color" content="#3C5F27">
+
+<!-- Preload hero (above-the-fold LCP) -->
+<link rel="preload" as="image" href="/images/hero.jpg" fetchpriority="high">
+
+<!-- TODO[analytics]: enable one of these once deployed.
+<script defer data-domain="wearetreed.com" src="https://plausible.io/js/script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+-->
+
+<style>
+/* ==========================================================
+   Design system — extracted from live wearetreed.com
+   Palette: olive #3C5F27 (primary text & accent),
+            mint  #9BCA82 (CTA bg, highlights),
+            cream #F0EFE9 (page bg),
+            paper #E8E7DE (secondary bg),
+            white #FFFFFF
+   Type: system-ui sans; big light h1, heavy narrative h2, small product h3
+   Buttons: pill — 60px/200px radius, olive on mint or olive on cream
+   ========================================================== */
+:root {
+  --olive: #3C5F27;
+  --olive-deep: #2E4B1E;
+  --mint: #9BCA82;
+  --mint-bright: #B4DE9A;
+  --mint-deep: #7FAF66;
+  --cream: #F0EFE9;
+  --paper: #E8E7DE;
+  --paper-2: #EEEEEE;
+  --white: #FFFFFF;
+  --ink: #1A1A1A;
+  --line: rgba(60, 95, 39, 0.14);
+  --line-strong: rgba(60, 95, 39, 0.28);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background: var(--cream);
+  color: var(--olive);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ---- Typography scale from live site ---- */
+h1 { font-size: clamp(40px, 5.4vw, 72px); line-height: 1.1; font-weight: 400; letter-spacing: -0.01em; color: var(--olive); }
+h2.lead { font-size: clamp(26px, 3vw, 40px); line-height: 1.2; font-weight: 700; color: var(--olive); letter-spacing: -0.005em; }
+h2.section { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.1; font-weight: 600; color: var(--olive); letter-spacing: -0.01em; }
+h3 { font-size: 18px; font-weight: 600; color: var(--olive); line-height: 1.3; }
+p { color: var(--olive); }
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
+.eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; color: var(--olive); text-transform: uppercase; opacity: 0.8; }
+.tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--paper); color: var(--olive); border-radius: 999px; font-size: 13px; font-weight: 500; }
+.tag.mint { background: var(--mint); }
+
+/* ---- Buttons: pill, 8-20px, 60px radius, olive on mint ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 24px;
+  background: var(--mint); color: var(--olive);
+  font-size: 16px; font-weight: 600;
+  border-radius: 60px; border: 0;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--mint-bright); transform: translateY(-1px); }
+.btn svg { width: 16px; height: 16px; transition: transform 0.2s; }
+.btn:hover svg { transform: translateX(3px); }
+.btn.ghost { background: var(--paper); }
+.btn.ghost:hover { background: var(--paper-2); }
+.btn.outline { background: transparent; border: 1.5px solid var(--olive); }
+.btn.outline:hover { background: var(--olive); color: var(--cream); }
+.btn.light { background: var(--cream); color: var(--olive); }
+.btn.white { background: var(--white); color: var(--olive); }
+.btn.lg { padding: 16px 32px; font-size: 17px; }
+
+/* ---- Top bar (small trust + 24h) ---- */
+.topbar { background: var(--olive); color: var(--cream); font-size: 13px; }
+.topbar-inner { display: flex; justify-content: center; align-items: center; gap: 24px; padding: 10px 20px; flex-wrap: wrap; }
+.topbar-chip { display: inline-flex; align-items: center; gap: 8px; }
+.topbar-dot { width: 7px; height: 7px; background: var(--mint); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.topbar a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---- Nav: pill links, olive CTA ---- */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(240, 239, 233, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 0; }
+.logo { font-size: 22px; font-weight: 600; color: var(--olive); letter-spacing: -0.02em; }
+.logo span { color: var(--mint-deep); }
+.nav-pills { display: flex; gap: 8px; list-style: none; }
+.nav-pills a { padding: 8px 16px; background: var(--paper); color: var(--olive); border-radius: 999px; font-size: 15px; font-weight: 500; transition: background 0.2s; }
+.nav-pills a:hover { background: var(--paper-2); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang { display: flex; gap: 2px; font-size: 13px; font-weight: 500; }
+.lang a { padding: 6px 10px; border-radius: 999px; opacity: 0.6; }
+.lang a.active { background: var(--olive); color: var(--cream); opacity: 1; }
+@media (max-width: 980px) {
+  .nav-pills { display: none; }
+}
+
+/* ---- HERO: dark image backdrop, white text ---- */
+.hero { position: relative; min-height: clamp(560px, 78vh, 820px); display: flex; align-items: flex-end; color: var(--cream); overflow: hidden; padding-bottom: 60px; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,36,16,0.35) 0%, rgba(26,36,16,0.15) 35%, rgba(26,36,16,0.75) 100%); }
+.hero-inner { position: relative; z-index: 1; width: 100%; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 60px; align-items: end; padding-top: 120px; }
+.hero-tag { color: var(--mint-bright); font-size: 14px; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 18px; display: inline-flex; align-items: center; gap: 12px; }
+.hero-tag::before { content: ""; width: 32px; height: 1px; background: var(--mint-bright); }
+.hero h1 { color: var(--cream); max-width: 14ch; font-weight: 300; }
+.hero-sub { max-width: 40ch; color: rgba(240, 239, 233, 0.85); font-size: 17px; margin-top: 24px; line-height: 1.5; }
+.hero-ctas { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-side { align-self: end; }
+.hero-hash { font-size: 14px; font-weight: 500; color: var(--mint-bright); letter-spacing: 0.1em; margin-bottom: 10px; }
+.hero-pipes { font-size: 15px; color: rgba(240,239,233,0.9); line-height: 1.8; }
+.hero-pipes strong { color: var(--cream); font-weight: 600; }
+.hero-scroll { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); color: var(--mint-bright); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; z-index: 2; opacity: 0.8; }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 30px; padding-top: 80px; }
+}
+
+/* ---- Clients strip ---- */
+.clients { padding: 60px 0 40px; text-align: center; }
+.clients-label { font-size: 15px; color: var(--olive); font-weight: 500; margin-bottom: 28px; opacity: 0.8; }
+.clients-label strong { font-weight: 700; }
+.logos-track-wrap { overflow: hidden; }
+.logos-track { display: flex; gap: 72px; animation: scroll 30s linear infinite; width: max-content; align-items: center; }
+.logos-track img { max-height: 28px; width: auto; filter: brightness(0) saturate(100%) invert(25%) sepia(33%) saturate(757%) hue-rotate(54deg) brightness(92%) contrast(93%); opacity: 0.75; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---- Narrative section (big olive h2 on cream) ---- */
+.narrative { padding: clamp(60px, 8vw, 120px) 0; }
+.narrative-inner { max-width: 900px; }
+.narrative h2 { margin-top: 14px; }
+.narrative-cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---- Products grid ---- */
+.products-section { padding: clamp(40px, 6vw, 90px) 0 clamp(60px, 8vw, 120px); }
+.products-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; }
+.products-head h2 { max-width: 20ch; }
+.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.product { background: var(--paper); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s; }
+.product:hover { transform: translateY(-4px); }
+.product-img { aspect-ratio: 4/5; background: var(--paper-2); overflow: hidden; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.product:hover .product-img img { transform: scale(1.04); }
+.product-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.product h3 { font-size: 18px; font-weight: 600; }
+.product p { font-size: 14px; line-height: 1.5; opacity: 0.85; flex: 1; }
+.product-foot { display: flex; justify-content: space-between; align-items: baseline; padding-top: 14px; border-top: 1px solid var(--line); margin-top: 8px; }
+.product-from { font-size: 12px; opacity: 0.7; }
+.product-price { font-size: 18px; font-weight: 600; }
+@media (max-width: 1100px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .products-grid { grid-template-columns: 1fr; } }
+
+/* ---- Packaging feature panel (dark green) ---- */
+.packaging { padding: clamp(60px, 8vw, 120px) 0; background: var(--olive); color: var(--cream); position: relative; }
+.packaging * { color: var(--cream); }
+.packaging-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.packaging .eyebrow { color: var(--mint-bright); opacity: 1; }
+.packaging h2 { color: var(--cream); margin-top: 14px; }
+.packaging p { color: rgba(240, 239, 233, 0.85); margin-top: 20px; max-width: 46ch; line-height: 1.55; }
+.packaging-ctas { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+.packaging-img { aspect-ratio: 4/3; border-radius: 16px; overflow: hidden; background: var(--olive-deep); }
+.packaging-img img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) { .packaging-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Principles: 4 numbered cards ---- */
+.principles { padding: clamp(60px, 8vw, 120px) 0; }
+.principles-head { margin-bottom: 48px; max-width: 720px; }
+.principles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.principle { padding: 28px 24px 28px; background: var(--paper); border-radius: 16px; display: flex; flex-direction: column; gap: 14px; transition: background 0.2s; }
+.principle:hover { background: var(--paper-2); }
+.principle-num { font-size: 13px; font-weight: 500; color: var(--mint-deep); letter-spacing: 0.08em; }
+.principle h3 { font-size: 20px; font-weight: 600; line-height: 1.25; }
+.principle p { font-size: 14px; line-height: 1.55; opacity: 0.85; }
+@media (max-width: 1000px) { .principles-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .principles-grid { grid-template-columns: 1fr; } }
+
+/* ---- "A proč to vlastně děláme" story section ---- */
+.story { padding: clamp(60px, 8vw, 120px) 0; background: var(--paper); }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.story h2 { margin-top: 14px; }
+.story-body { color: var(--olive); font-size: 17px; line-height: 1.55; margin-top: 24px; max-width: 48ch; }
+.story-body strong { font-weight: 700; }
+.story-cta { margin-top: 28px; }
+.story-img { aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; background: var(--paper-2); }
+.story-img img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Difference / vs comparison ---- */
+.diff { padding: clamp(60px, 8vw, 120px) 0; }
+.diff-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+.diff-table { max-width: 900px; margin: 0 auto; background: var(--paper); border-radius: 20px; overflow: hidden; }
+.diff-head-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; background: var(--olive); color: var(--cream); padding: 22px 28px; gap: 20px; align-items: center; }
+.diff-head-row div:first-child { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+.diff-head-row .t { text-align: center; font-weight: 700; color: var(--mint); font-size: 17px; }
+.diff-head-row .o { text-align: center; font-weight: 500; color: rgba(240,239,233,0.6); font-size: 17px; }
+.diff-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; padding: 18px 28px; gap: 20px; align-items: center; border-top: 1px solid var(--line); }
+.diff-row > div:first-child { font-weight: 500; font-size: 15px; }
+.diff-cell { text-align: center; font-size: 14px; }
+.diff-cell.win { color: var(--olive); font-weight: 600; }
+.diff-cell.win::before { content: "✓ "; color: var(--mint-deep); font-weight: 700; }
+.diff-cell.lose { opacity: 0.6; }
+.diff-cell.lose::before { content: "✕ "; opacity: 0.7; }
+@media (max-width: 720px) { .diff-head-row, .diff-row { grid-template-columns: 1fr; text-align: left; } .diff-cell { text-align: left; } }
+
+/* ---- Ablaufs: 5 numbered steps in a row ---- */
+.process { padding: clamp(60px, 8vw, 120px) 0; background: var(--paper); }
+.process-head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; }
+.process-step { padding: 24px 20px; background: var(--cream); border-radius: 14px; position: relative; }
+.step-num { display: inline-flex; width: 32px; height: 32px; border-radius: 50%; background: var(--mint); color: var(--olive); align-items: center; justify-content: center; font-weight: 700; font-size: 15px; margin-bottom: 14px; }
+.process-step h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.process-step p { font-size: 13px; line-height: 1.5; opacity: 0.85; }
+@media (max-width: 1100px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .process-steps { grid-template-columns: 1fr; } }
+
+/* ---- Case studies ---- */
+.cases { padding: clamp(60px, 8vw, 120px) 0; }
+.cases-head { max-width: 720px; margin-bottom: 48px; }
+.cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.case { display: flex; flex-direction: column; gap: 16px; cursor: pointer; }
+.case-img { aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; position: relative; background: var(--paper); }
+.case-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.case:hover .case-img img { transform: scale(1.04); }
+.case-badge { position: absolute; top: 16px; left: 16px; background: var(--cream); color: var(--olive); padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.case h3 { font-size: 22px; font-weight: 600; line-height: 1.25; }
+.case p { font-size: 14px; opacity: 0.85; line-height: 1.5; }
+.case-link { font-size: 13px; font-weight: 600; color: var(--mint-deep); display: inline-flex; align-items: center; gap: 6px; }
+@media (max-width: 900px) { .cases-grid { grid-template-columns: 1fr; } }
+
+/* ---- Testimonial slider-ish ---- */
+.testi { padding: clamp(60px, 8vw, 120px) 0; background: var(--paper); }
+.testi-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.testi-card { background: var(--cream); padding: 32px; border-radius: 16px; display: flex; flex-direction: column; gap: 20px; }
+.testi-quote { font-size: 17px; line-height: 1.5; font-weight: 400; color: var(--olive); flex: 1; }
+.testi-quote::before { content: "“"; font-size: 36px; line-height: 0; color: var(--mint-deep); margin-right: 4px; font-family: Georgia, serif; }
+.testi-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+.testi-author strong { font-weight: 600; font-size: 15px; display: block; }
+.testi-author span { font-size: 13px; opacity: 0.75; }
+@media (max-width: 720px) { .testi-grid { grid-template-columns: 1fr; } }
+
+/* ---- Stats counters ---- */
+.stats { padding: clamp(60px, 8vw, 120px) 0; background: var(--olive); color: var(--cream); }
+.stats h2 { color: var(--cream); text-align: center; max-width: 720px; margin: 0 auto 60px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.stat { text-align: center; }
+.stat-num { font-size: clamp(56px, 7vw, 96px); line-height: 1; font-weight: 300; color: var(--mint); letter-spacing: -0.02em; }
+.stat-label { margin-top: 16px; font-size: 16px; color: rgba(240,239,233,0.88); max-width: 28ch; margin-left: auto; margin-right: auto; line-height: 1.4; }
+.stat-source { margin-top: 12px; font-size: 12px; color: rgba(240,239,233,0.55); letter-spacing: 0.05em; text-transform: uppercase; }
+@media (max-width: 720px) { .stats-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ---- FAQ ---- */
+.faq { padding: clamp(60px, 8vw, 120px) 0; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+.faq-cat-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.faq-cat-tab { padding: 8px 14px; background: var(--paper); color: var(--olive); border-radius: 999px; font-size: 14px; font-weight: 500; border: 0; transition: background 0.2s; }
+.faq-cat-tab.active { background: var(--olive); color: var(--cream); }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-top: 1px solid var(--line); padding: 22px 0; cursor: pointer; }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; font-size: 17px; font-weight: 500; gap: 20px; color: var(--olive); }
+.faq-q-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--paper); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s, background 0.2s; position: relative; }
+.faq-q-icon::before, .faq-q-icon::after { content: ""; position: absolute; background: var(--olive); border-radius: 1px; }
+.faq-q-icon::before { width: 10px; height: 2px; }
+.faq-q-icon::after { width: 2px; height: 10px; transition: transform 0.3s; }
+.faq-item.open .faq-q-icon { background: var(--mint); }
+.faq-item.open .faq-q-icon::after { transform: rotate(90deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, margin-top 0.3s; font-size: 15px; line-height: 1.6; opacity: 0.85; }
+.faq-item.open .faq-a { max-height: 400px; margin-top: 12px; }
+.faq-category { display: none; }
+.faq-category.active { display: block; }
+@media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Final CTA / quote form ---- */
+.cta { padding: clamp(70px, 10vw, 140px) 0; background: var(--mint); }
+.cta-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.cta h2 { color: var(--olive); font-size: clamp(34px, 4vw, 56px); font-weight: 600; letter-spacing: -0.01em; }
+.cta-sub { font-size: 18px; margin: 20px auto 36px; max-width: 46ch; color: var(--olive); line-height: 1.5; opacity: 0.9; }
+.cta-form { max-width: 720px; margin: 0 auto; background: var(--cream); border-radius: 20px; padding: 36px; text-align: left; box-shadow: 0 20px 50px -15px rgba(46, 75, 30, 0.25); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.form-row-1 { margin-bottom: 14px; }
+.form-field label { display: block; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.75; margin-bottom: 6px; }
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%; padding: 12px 14px; border: 1px solid var(--line);
+  background: var(--white); border-radius: 10px; font-family: inherit; font-size: 15px; color: var(--olive);
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--olive); }
+.form-field textarea { min-height: 90px; resize: vertical; }
+.form-submit { width: 100%; margin-top: 6px; padding: 16px; background: var(--olive); color: var(--cream); border: 0; border-radius: 60px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.form-submit:hover { background: var(--olive-deep); }
+.form-submit svg { width: 16px; height: 16px; }
+.cta-promises { display: flex; justify-content: center; gap: 24px; margin-top: 24px; flex-wrap: wrap; }
+.cta-promise { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--olive); opacity: 0.85; font-weight: 500; }
+.cta-promise::before { content: "✓"; color: var(--olive); font-weight: 700; }
+@media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ---- Footer ---- */
+footer { background: var(--olive); color: var(--cream); padding: 80px 0 30px; }
+footer * { color: var(--cream); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+.footer-brand { font-size: 28px; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.02em; }
+.footer-brand span { color: var(--mint); }
+.footer-tag { color: rgba(240,239,233,0.75); max-width: 32ch; font-size: 14px; }
+.footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: var(--mint); font-weight: 600; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: rgba(240,239,233,0.8); font-size: 14px; }
+.footer-col a:hover { color: var(--mint); }
+.footer-bottom { padding-top: 24px; border-top: 1px solid rgba(240,239,233,0.12); display: flex; justify-content: space-between; font-size: 13px; color: rgba(240,239,233,0.55); flex-wrap: wrap; gap: 16px; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Reveal ---- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- Sticky mobile CTA ---- */
+.sticky-cta { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 90; }
+.sticky-cta .btn { width: 100%; justify-content: center; padding: 16px; box-shadow: 0 10px 30px rgba(46, 75, 30, 0.25); }
+@media (max-width: 720px) { .sticky-cta { display: block; } }
+</style>
+</head>
+<body>
+
+<!-- TODO[capacity]: optional urgency/trust bar — delete if you don't want the pressure-y vibe -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-chip"><span class="topbar-dot"></span> Wir antworten innerhalb von <strong>24 Stunden</strong></span>
+    <span style="opacity:0.5">·</span>
+    <span class="topbar-chip">Familienwerkstatt · Šumperk</span>
+    <span style="opacity:0.5">·</span>
+    <a href="#cta">Unverbindliche Anfrage →</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">wearetreed<span>.</span></a>
+    <ul class="nav-pills">
+      <li><a href="#products">Was wir tun</a></li>
+      <li><a href="#process">Wie wir arbeiten</a></li>
+      <li><a href="#cases">Case studies</a></li>
+      <li><a href="#" onclick="event.preventDefault()">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang">
+        <a href="/" hreflang="cs">CZ</a>
+        <a href="/en/" hreflang="en">EN</a>
+        <a href="/de/" hreflang="de" class="active">DE</a>
+      </div>
+      <a href="#cta" class="btn">Schreiben Sie uns
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg" style="background-image: url('/images/hero.jpg');"></div>
+  <div class="container hero-inner">
+    <div>
+      <span class="hero-tag">#WeAreTreed</span>
+      <h1>Unvergessliche individuelle&nbsp;Firmengeschenke</h1>
+      <p class="hero-sub">Werbeartikel mit Ihrem Logo, die nicht in der Schublade verschwinden — aus unserer Familienwerkstatt in der Region Šumperk. Wir entwerfen, fertigen, verpacken und liefern.</p>
+      <div class="hero-ctas">
+        <a href="#cta" class="btn lg">Mehr erfahren
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#products" class="btn lg light">Produktkatalog</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-hash">ENTWERFEN · FERTIGEN · VERPACKEN · LIEFERN</div>
+      <div class="hero-pipes">
+        <strong>50+ Firmen</strong> haben uns gewählt &middot; <strong>ab 10 Stück</strong> &middot; <strong>Made in Tschechien</strong>
+      </div>
+    </div>
+  </div>
+  <span class="hero-scroll">Scroll ↓</span>
+</section>
+
+<!-- Clients -->
+<section class="clients">
+  <div class="container">
+    <p class="clients-label">Wir haben Marken geholfen, <strong>die Sie kennen</strong></p>
+  </div>
+  <div class="logos-track-wrap">
+    <div class="logos-track">
+      <img src="/images/logos/cloudflare.svg" alt="Cloudflare" loading="lazy">
+      <img src="/images/logos/mastercard.svg" alt="Mastercard" loading="lazy">
+      <img src="/images/logos/bohemia.png" alt="Bohemia Interactive" loading="lazy">
+      <img src="/images/logos/myco.png" alt="Myco" loading="lazy">
+      <img src="/images/logos/lynkco.svg" alt="Lynk &amp; Co" loading="lazy">
+      <img src="/images/logos/greencat.jpg" alt="Green Cat" loading="lazy">
+      <img src="/images/logos/raturs.png" alt="Raturs Trade" loading="lazy">
+      <img src="/images/logos/cloudflare.svg" alt="Cloudflare" loading="lazy">
+      <img src="/images/logos/mastercard.svg" alt="Mastercard" loading="lazy">
+      <img src="/images/logos/bohemia.png" alt="Bohemia Interactive" loading="lazy">
+      <img src="/images/logos/myco.png" alt="Myco" loading="lazy">
+      <img src="/images/logos/lynkco.svg" alt="Lynk &amp; Co" loading="lazy">
+      <img src="/images/logos/greencat.jpg" alt="Green Cat" loading="lazy">
+      <img src="/images/logos/raturs.png" alt="Raturs Trade" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Narrative intro -->
+<section class="narrative">
+  <div class="container narrative-inner">
+    <span class="eyebrow">Katalog</span>
+    <h2 class="lead">Werbeartikel mit Ihrem Logo, die nicht in der Schublade verschwinden — aus unserer Familienwerkstatt in der Region Šumperk. Wir kümmern uns um Design, Produktion, Verpackung und Versand an Ihre Partner, Kunden oder Mitarbeiter.</h2>
+    <div class="narrative-cta">
+      <a href="#cta" class="btn">Mehr erfahren
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="products-head">
+      <div>
+        <span class="eyebrow">Bestseller</span>
+        <h2 class="section" style="margin-top: 10px;">Wir gravieren Ihr Firmenlogo auf unsere Bestseller</h2>
+      </div>
+      <a href="#cta" class="btn ghost">Ich möchte ein individuelles Produkt →</a>
+    </div>
+    <div class="products-grid">
+      <article class="product reveal">
+        <div class="product-img"><img src="/images/product-big-charger.jpg" alt="Treed Big Charger" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Treed Big Charger</h3>
+          <p>Ein massives Stück Holz, das immer Aufmerksamkeit erregt. Dient als Ablage für alle täglichen Essentials und lädt iPhone, Android oder kompatibles Zubehör kabellos auf.</p>
+          <!-- TODO[price]: verify orientation price at 100 ks -->
+          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">1 800 Kč</span></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <!-- TODO[product-swap]: v5 had Pokladnička (450 Kč) here — swapped to Treed Notebook since we have a hero-quality photo. Say the word if you want Pokladnička back. -->
+        <div class="product-img"><img src="/images/product-notebook.jpg" alt="Treed Notebook — Holz-Notizbuch" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Treed Notebook</h3>
+          <p>Ein Holz-Notizbuch in Nussbaum-Ausführung mit handgenähter Bindung. Ideal für Schlüsselkunden, Konferenzen und Geschenke, die wirklich auf dem Schreibtisch bleiben.</p>
+          <!-- TODO[price]: confirm notebook price at 50 ks -->
+          <div class="product-foot"><span class="product-from">Ab 50 Stück</span><span class="product-price">890 Kč</span></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <div class="product-img"><img src="/images/product-charger.jpg" alt="Holz-Ladegerät — treed charger" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Holz-Ladegerät — treed charger</h3>
+          <p>Lädt iPhone, Android oder kompatibles Zubehör — kein Kabelchaos, kein schlechtes ökologisches Gewissen. Passt perfekt auf den Schreibtisch, wo Ihr Logo täglich sichtbar ist.</p>
+          <!-- TODO[price]: verify orientation price at 100 ks -->
+          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">750 Kč</span></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <div class="product-img"><img src="/images/product-stand.jpg" alt="Laptop-Ständer — treed laptop stand" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Laptop-Ständer — treed laptop stand</h3>
+          <p>Eleganter Holz-Laptop-Ständer für Laptops bis 16'', mit Korkfüßen und einem Stopper aus Naturkautschuk. Inklusive handgenähtem Leinen-Tragebeutel.</p>
+          <!-- TODO[price]: verify orientation price at 100 ks -->
+          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">980 Kč</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Packaging feature (dark green panel) -->
+<section class="packaging">
+  <div class="container packaging-grid">
+    <div>
+      <span class="eyebrow">Komplettdesign</span>
+      <h2 class="section">Individuelle Geschenkverpackung — auf Ihre Marke zugeschnitten</h2>
+      <p>Wir gestalten Verpackungen, Beilagekarten und das gesamte Unboxing-Erlebnis — handgefertigt, mit Ihrem Logo, versandfertig an Ihre Partner, Kunden oder Mitarbeiter.</p>
+      <div class="packaging-ctas">
+        <a href="#cta" class="btn">Das möchte ich
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#process" class="btn outline" style="color: var(--cream); border-color: var(--cream);">Wie wir arbeiten</a>
+      </div>
+    </div>
+    <div class="packaging-img">
+      <img src="/images/packaging.jpg" alt="Individuelle Treed-Geschenkverpackung für Cloudflare" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Principles 4 cards -->
+<section class="principles">
+  <div class="container">
+    <div class="principles-head">
+      <span class="eyebrow">Unsere Arbeitsweise</span>
+      <h2 class="section" style="margin-top: 10px;">Warum Firmen uns wählen</h2>
+    </div>
+    <div class="principles-grid">
+      <div class="principle reveal">
+        <div class="principle-num">001</div>
+        <h3>Ihr Logo in praktischer Form</h3>
+        <p>Standard-Tassen und -Kugelschreiber haben ausgedient. Heute zählen Mühe, Qualität und tatsächlicher Nutzen.</p>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-num">002</div>
+        <h3>Komplette Kampagnenunterstützung</h3>
+        <p>Versand, Fulfillment, Design oder Marketing-Support — wir kümmern uns darum, damit Sie es nicht müssen.</p>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-num">003</div>
+        <h3>Einzigartige Materialien und Nachhaltigkeit</h3>
+        <p>Wir arbeiten mit regionalem Holz, Myco-Myzel-Technologie, Bienenwachs-Finishes und portugiesischem Kork.</p>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-num">004</div>
+        <h3>Hochwertige Handarbeit</h3>
+        <p>Wir schneiden, schleifen, lackieren, verpacken und vollenden jedes Stück in unserer Familienwerkstatt in Šumperk in Mähren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story section -->
+<section class="story" id="about">
+  <div class="container story-grid">
+    <div>
+      <span class="eyebrow">Und warum machen wir das eigentlich?</span>
+      <h2 class="section" style="margin-top: 10px;">Handgefertigte Werbeartikel aus einer&nbsp;Familienwerkstatt</h2>
+      <p class="story-body">Wenn Sie für Vertrieb oder Marketing zuständig sind, sind Firmengeschenke für Sie wahrscheinlich nichts Neues. <strong>Auch wir suchten eine originelle, hochwertige Lösung, die wirklich Freude bereitet.</strong> Wir fanden keine — also begannen wir, sie selbst herzustellen.</p>
+      <a href="#cases" class="btn ghost story-cta">Case Studies ansehen →</a>
+    </div>
+    <div class="story-img">
+      <img src="/images/workshop-team.jpg" alt="Das Treed-Team in unserer Familienwerkstatt in Šumperk" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Difference -->
+<section class="diff">
+  <div class="container">
+    <div class="diff-head">
+      <span class="eyebrow">Wo liegt also der Unterschied?</span>
+      <h2 class="section" style="margin-top: 10px;">Handgefertigt vs. gewöhnlicher Werbeartikel</h2>
+    </div>
+    <div class="diff-table">
+      <div class="diff-head-row">
+        <div>Kriterium</div>
+        <div class="t">Wearetreed</div>
+        <div class="o">Gewöhnlicher Werbeartikel</div>
+      </div>
+      <div class="diff-row"><div>Versand inklusive</div><div class="diff-cell win">Ja</div><div class="diff-cell lose">Separat</div></div>
+      <div class="diff-row"><div>Problemlose Lagerung</div><div class="diff-cell win">Ja</div><div class="diff-cell lose">Sache des Kunden</div></div>
+      <div class="diff-row"><div>Individuelle Verpackung</div><div class="diff-cell win">Ja</div><div class="diff-cell lose">Standard</div></div>
+      <div class="diff-row"><div>Handgefertigt in Tschechien</div><div class="diff-cell win">Ja</div><div class="diff-cell lose">Selten</div></div>
+      <div class="diff-row"><div>Transparenz über den gesamten Prozess</div><div class="diff-cell win">Ja</div><div class="diff-cell lose">Fragmentiert</div></div>
+      <div class="diff-row"><div>Mehrwert</div><div class="diff-cell win">Geschichte, Qualität</div><div class="diff-cell lose">Logo auf Lagerware</div></div>
+      <div class="diff-row"><div>Nachhaltigkeit</div><div class="diff-cell win">Standard</div><div class="diff-cell lose">Ausnahme</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Ablaufs 5 steps -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-head">
+      <span class="eyebrow">So läuft das Ganze ab</span>
+      <h2 class="section" style="margin-top: 10px;">Von der Anfrage bis zur&nbsp;Lieferung</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">1</div>
+        <h3>Sie senden eine Anfrage</h3>
+        <p>Den Rest übernehmen wir. Sie verpflichten sich zu nichts — klicken Sie einfach auf Unverbindliche Anfrage und wir melden uns.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">2</div>
+        <h3>Wir sprechen miteinander</h3>
+        <p>Sagen Sie uns, was Sie sich vorstellen. Wir fragen nach den Details und entwickeln gemeinsam mit Ihnen die richtige Lösung.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">3</div>
+        <h3>Wir erstellen ein Muster</h3>
+        <p>Wir senden Ihnen ein Angebot, Ideen, Visualisierungen und bei Bedarf ein physisches Muster. Damit Sie sehen, wie das Ergebnis aussehen wird, bevor Sie Ja sagen.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">4</div>
+        <h3>Sie geben das Design frei</h3>
+        <p>Wenn wir uns einig sind, starten wir die handwerkliche Produktion in unserer Werkstatt und sorgen dafür, dass jedes Detail stimmt.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">5</div>
+        <h3>Wir liefern</h3>
+        <p>An eine Adresse oder an fünfzig. In individueller Verpackung, mit Ihrem Logo und dem Inhalt genau nach Ihren Vorstellungen.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="#cta" class="btn lg">Unverbindlich anfragen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Case studies -->
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="cases-head">
+      <span class="eyebrow">Für wen wir da sind</span>
+      <h2 class="section" style="margin-top: 10px;">Sie verdienen eine außergewöhnliche Zusammenarbeit — egal, ob Sie ein kleines Unternehmen oder ein internationaler Player sind.</h2>
+    </div>
+    <div class="cases-grid">
+      <a href="/de/cloudflare.html" class="case reveal">
+        <div class="case-img">
+          <img src="/images/case-cloudflare.jpg" alt="Cloudflare Direct Mailer" loading="lazy">
+          <span class="case-badge">Cloudflare</span>
+        </div>
+        <h3>Direct Mailer für Cloudflare</h3>
+        <p>Wie wir geholfen haben, Sicherheitssoftware an die CTOs der größten tschechischen Unternehmen zu verkaufen.</p>
+        <span class="case-link">Case Study lesen →</span>
+      </a>
+      <a href="/de/myco.html" class="case reveal">
+        <div class="case-img">
+          <img src="/images/case-myco.jpg" alt="Myco Pilz-Parfüm" loading="lazy">
+          <span class="case-badge">Myco</span>
+        </div>
+        <h3>Pilz-Parfüm in Zusammenarbeit mit Myco</h3>
+        <p>Gemeinsam mit dem Startup Myco aus Kyjov haben wir das weltweit erste Pilz-Parfüm hergestellt.</p>
+        <span class="case-link">Case Study lesen →</span>
+      </a>
+      <a href="/de/bohemia.html" class="case reveal">
+        <div class="case-img">
+          <img src="/images/case-bohemia.jpg" alt="Bohemia Interactive Merch" loading="lazy">
+          <span class="case-badge">Bohemia Interactive</span>
+        </div>
+        <h3>Post-apokalyptisches Merch für Bohemia Interactive</h3>
+        <p>Wir haben ein neues Produkt für die Fan-Community des Survival-Hits DayZ entworfen und gefertigt.</p>
+        <span class="case-link">Case Study lesen →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testi">
+  <div class="container">
+    <div class="testi-head">
+      <span class="eyebrow">Was Kunden sagen</span>
+      <h2 class="section" style="margin-top: 10px;">Zusammenarbeiten, die uns&nbsp;Freude machen</h2>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <p class="testi-quote">Die Zusammenarbeit mit Wearetreed ist eine Freude — schnelle Abstimmung, hervorragende Kommunikation und vor allem die Bereitschaft, ein Produkt nach unseren Bedürfnissen zu entwickeln. Das Ergebnis passt perfekt zum Konzept unserer Myzel-Diffusoren und verleiht dem Ganzen einen wunderbar natürlichen Charakter. Danke, dass Ihr es mit Herz (und Nachhaltigkeit) macht!</p>
+        <div class="testi-author">
+          <div>
+            <strong>Eva Minčíková</strong>
+            <span>Myco s.r.o.</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <p class="testi-quote">Nachhaltigkeit gehört zur DNA unseres Unternehmens. Die hölzernen Wearetreed-Ladegeräte waren das Hauptgeschenk für unsere B2B-Kunden bei unseren Fintech-Events in Europa. Die Resonanz war sehr positiv — einige Kunden baten nach dem Event um weitere Stücke und Informationen für ihre Marketing-Teams.</p>
+        <div class="testi-author">
+          <div>
+            <strong>Tomáš Doležal</strong>
+            <span>Mastercard · 10–12.2022</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <p class="testi-quote">Wir arbeiten gern mit Wearetreed zusammen. Unser letzter Auftrag verlief einwandfrei — eigentlich sogar darüber hinaus: Sie haben die Ware sogar persönlich geliefert, sodass wir einen extrem knappen Termin schaffen konnten. Sie verstehen ihr Handwerk und stehen jederzeit mit Rat und Tat zur Seite.</p>
+        <div class="testi-author">
+          <div>
+            <strong>Kateřina Pečená</strong>
+            <span>Marketing Manager · Green Cat</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <p class="testi-quote">Als kleines Unternehmen mit Fokus auf Energieeinsparung in der Industrie ist es der Sinn unserer Arbeit, zu einem grüneren Planeten beizutragen. Als wir Geschenke für unsere Kollegen suchten, fanden wir bei Wearetreed nicht nur Nachhaltigkeit, sondern auch elegante Accessoires für den Alltag zu Hause und im Büro.</p>
+        <div class="testi-author">
+          <div>
+            <strong>David Hořava</strong>
+            <span>HE Consulting s.r.o.</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container">
+    <h2 class="section" style="color: var(--cream);">Ein gut gewähltes Geschenk macht Geschäft</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num" data-target="80">80%</div>
+        <div class="stat-label">der Beschenkten erinnern sich auch nach einem&nbsp;Jahr an die Marke.</div>
+        <div class="stat-source">Sendoso, 2023</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="79">79%</div>
+        <div class="stat-label">der Beschenkten bilden sich eine positivere Meinung über&nbsp;die Marke.</div>
+        <div class="stat-source">Giftsenda, 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="68">68%</div>
+        <div class="stat-label">der Befragten haben nach Erhalt eines Geschenks eine Geschäftsbeziehung&nbsp;begonnen.</div>
+        <div class="stat-source">Postal.com, 2022</div>
+      </div>
+    </div>
+    <!-- TODO[stats]: verify exact percentages from the three sources — currently using industry-reported figures -->
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <span class="eyebrow">FAQ</span>
+        <h2 class="section" style="margin-top: 10px;">Fragen, die Ihnen gerade durch den Kopf gehen könnten</h2>
+        <div class="faq-cat-tabs">
+          <button class="faq-cat-tab active" data-cat="general">Allgemein</button>
+          <button class="faq-cat-tab" data-cat="process">Ablauf</button>
+          <button class="faq-cat-tab" data-cat="delivery">Versand</button>
+          <button class="faq-cat-tab" data-cat="custom">Personalisierung</button>
+          <button class="faq-cat-tab" data-cat="sustain">Nachhaltigkeit</button>
+        </div>
+      </div>
+      <div>
+        <div class="faq-category active" data-cat="general">
+          <div class="faq-list">
+            <div class="faq-item open"><div class="faq-q">Welche Arten von Firmengeschenken bieten Sie an?<div class="faq-q-icon"></div></div><div class="faq-a">Wir bieten ein breites Sortiment umweltfreundlicher Geschenke aus natürlichen Materialien — hölzerne kabellose Ladegeräte, ergonomische Laptop-Ständer, Schreibtisch-Organizer, hölzerne Auto-Düfte. Dazu Geschenkboxen, die Produkte unserer Werkstatt und anderer regionaler Manufakturen kombinieren.</div></div>
+            <div class="faq-item"><div class="faq-q">Sind alle Produkte aus nachhaltigen Materialien?<div class="faq-q-icon"></div></div><div class="faq-a">Wir fertigen alle unsere Produkte mit Blick auf Nachhaltigkeit. Wir verwenden regionales Holz, umweltfreundliche Lacke und recycelbare Verpackungen.</div></div>
+            <div class="faq-item"><div class="faq-q">Können wir Muster vor der Bestellung sehen?<div class="faq-q-icon"></div></div><div class="faq-a">Ja — Sie können vor der finalen Bestellung ein Muster anfordern, auf Wunsch auch mehrere Varianten / Iterationen. Kontaktieren Sie uns für mehr Informationen.</div></div>
+            <div class="faq-item"><div class="faq-q">Was ist die Mindestbestellmenge?<div class="faq-q-icon"></div></div><div class="faq-a">Die Mindestbestellmenge hängt vom Produkt und vom Grad der Personalisierung ab. Standard ist <strong>ab 10 Stück mit Gravur</strong>.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="process">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Wie lange dauert die Produktion einer Sonderanfertigung?<div class="faq-q-icon"></div></div><div class="faq-a">In der Regel <strong>1–4 Wochen</strong>, je nach Komplexität der Personalisierung und Bestellmenge.</div></div>
+            <div class="faq-item"><div class="faq-q">Führen Sie eine Qualitätskontrolle vor Produktionsbeginn durch?<div class="faq-q-icon"></div></div><div class="faq-a">Jedes Design durchläuft eine Freigabe, und alle Produkte werden vor dem Versand kontrolliert.</div></div>
+            <div class="faq-item"><div class="faq-q">Wie gewährleisten Sie konsistente Qualität bei großen Bestellungen?<div class="faq-q-icon"></div></div><div class="faq-a">Wir kombinieren moderne Produktionstechnologie mit manueller Qualitätskontrolle in jedem Produktionsschritt.</div></div>
+            <div class="faq-item"><div class="faq-q">Bieten Sie eine Garantie auf die Produkte?<div class="faq-q-icon"></div></div><div class="faq-a">Auf alle unsere Produkte bieten wir eine Standard-Garantie von <strong>2 Jahren</strong>.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="delivery">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Was ist die übliche Lieferzeit für große Bestellungen?<div class="faq-q-icon"></div></div><div class="faq-a">Standard sind <strong>2–8 Wochen</strong> inklusive Produktion, abhängig vom Bestellvolumen.</div></div>
+            <div class="faq-item"><div class="faq-q">Bieten Sie Express-Produktion oder -Versand an?<div class="faq-q-icon"></div></div><div class="faq-a">Bei dringenden Bestellungen kontaktieren Sie uns — wir vereinbaren individuelle Möglichkeiten.</div></div>
+            <div class="faq-item"><div class="faq-q">Kann eine Lieferung auf mehrere Orte aufgeteilt werden?<div class="faq-q-icon"></div></div><div class="faq-a">Wir liefern die Produkte auf Wunsch direkt an verschiedene Adressen Ihrer Kunden.</div></div>
+            <div class="faq-item"><div class="faq-q">Stellen Sie eine Sendungsverfolgung bereit?<div class="faq-q-icon"></div></div><div class="faq-a">Ja — nach dem Versand senden wir Ihnen eine Sendungsnummer.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="custom">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Können wir unser Firmenlogo auf die Produkte aufbringen lassen?<div class="faq-q-icon"></div></div><div class="faq-a">Ja — wir bieten verschiedene Branding-Optionen: Lasergravur, individuelle Verpackungen inklusive Grafikarbeiten oder die Herstellung eines Produkts, das Ihr Firmenlogo direkt widerspiegelt.</div></div>
+            <div class="faq-item"><div class="faq-q">Bieten Sie vollständige Sonderanfertigungen an?<div class="faq-q-icon"></div></div><div class="faq-a">Wenn Sie eine konkrete Produktidee haben, gehen wir die Möglichkeiten gern mit Ihnen durch und entwickeln eine einzigartige Lösung.</div></div>
+            <div class="faq-item"><div class="faq-q">Können wir vor der Bestellung eine digitale Vorschau sehen?<div class="faq-q-icon"></div></div><div class="faq-a">Nach Freigabe des Entwurfs senden wir Ihnen eine Visualisierung oder in manchen Fällen auch einen physischen Prototypen.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="sustain">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Wie gewährleisten Sie die Nachhaltigkeit Ihrer Produktion?<div class="faq-q-icon"></div></div><div class="faq-a">Wir verwenden regionales Holz, umweltfreundliche Farben und Verpackungen. Unsere Produktion ist auf Abfallminimierung ausgerichtet.</div></div>
+            <div class="faq-item"><div class="faq-q">Wo werden Ihre Produkte hergestellt?<div class="faq-q-icon"></div></div><div class="faq-a">Wir fertigen alle Produkte handwerklich in <strong>Šumperk</strong>, Tschechien.</div></div>
+            <div class="faq-item"><div class="faq-q">Bieten Sie umweltfreundliche Verpackungsoptionen?<div class="faq-q-icon"></div></div><div class="faq-a">Alle unsere Produkte werden standardmäßig in recycelbaren oder biologisch abbaubaren Verpackungen versendet.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA / Form -->
+<section class="cta" id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="eyebrow" style="color: var(--olive); opacity: 0.9;">Lassen Sie uns starten</span>
+      <h2 style="margin-top: 14px;">Senden Sie ein Briefing — wir antworten innerhalb von 24 Stunden</h2>
+      <p class="cta-sub">Kurz und knapp — was Sie brauchen, für wen und bis wann. Den Rest klären wir gemeinsam.</p>
+      <!-- TODO[form-endpoint]: replace YOUR_FORMSPREE_ID below with your Formspree form ID.
+           Sign up at formspree.io → create form → copy the 8-char ID from https://formspree.io/f/XXXXXXXX -->
+      <form class="cta-form"
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+            onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_subject" value="Neue Anfrage von wearetreed.com">
+        <input type="hidden" name="_language" value="de">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div class="form-field"><label>Name</label><input type="text" name="jmeno" required placeholder="Max Mustermann"></div>
+          <div class="form-field"><label>Firma</label><input type="text" name="firma" required placeholder="Acme GmbH"></div>
+        </div>
+        <div class="form-row-1">
+          <div class="form-field"><label>Geschäftliche E-Mail</label><input type="email" name="email" required placeholder="max@acme.de"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label>Stückzahl</label>
+            <select name="pocet_kusu"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Weiß ich noch nicht</option></select>
+          </div>
+          <div class="form-field"><label>Zeitrahmen</label>
+            <select name="termin"><option>Innerhalb eines Monats</option><option>Innerhalb von 2–3 Monaten</option><option>Q4 / Weihnachten</option><option>Nur zur Orientierung</option></select>
+          </div>
+        </div>
+        <div class="form-row-1">
+          <div class="form-field"><label>Ein paar Worte zum Projekt (optional)</label><textarea name="zprava" placeholder="Anlass, Zielgruppe, Produktidee…"></textarea></div>
+        </div>
+        <button type="submit" class="form-submit">Anfrage senden
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-status" aria-live="polite" style="margin-top: 16px; display: none; color: var(--olive); font-weight: 600;"></p>
+      </form>
+      <div class="cta-promises">
+        <span class="cta-promise">Antwort innerhalb 24 h</span>
+        <span class="cta-promise">Unverbindlich</span>
+        <span class="cta-promise">Physisches Muster</span>
+        <span class="cta-promise">GDPR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">wearetreed<span>.</span></div>
+        <p class="footer-tag">Hochwertige Firmengeschenke aus einer Familienwerkstatt in der Region Šumperk. Tschechisches Handwerk, nachhaltige Materialien, eine Geschichte in jedem Stück.</p>
+      </div>
+      <div class="footer-col"><h4>Web</h4><ul><li><a href="#products">Was wir tun</a></li><li><a href="#process">Wie wir arbeiten</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">Über uns</a></li></ul></div>
+      <!-- TODO[phone]: replace +420 000 000 000 with real number -->
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="tel:+420000000000">+420 000 000 000</a></li><li><a href="#">Šumperk, Tschechien</a></li></ul></div>
+      <div class="footer-col"><h4>Folgen</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Behance</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 wearetreed · Alle Rechte vorbehalten</span><span>Hergestellt in Tschechien</span></div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#cta" class="btn">Schreiben Sie uns
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+<script>
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+// FAQ category tabs
+document.querySelectorAll('.faq-cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.faq-cat-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.faq-category').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.faq-category[data-cat="${tab.dataset.cat}"]`).classList.add('active');
+  });
+});
+
+// Stats counter (animate 0 → target when visible)
+const statIo = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.target, 10);
+    let cur = 0;
+    const step = Math.max(1, Math.round(target / 50));
+    const iv = setInterval(() => {
+      cur += step;
+      if (cur >= target) { cur = target; clearInterval(iv); }
+      el.textContent = cur + '%';
+    }, 24);
+    statIo.unobserve(el);
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.stat-num').forEach(el => statIo.observe(el));
+
+// Form handler — posts to Formspree via fetch (stays on page)
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  const status = form.querySelector('.form-status');
+  const originalLabel = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Wird gesendet…';
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      btn.innerHTML = '✓ Gesendet — wir melden uns innerhalb 24 h';
+      btn.style.background = 'var(--olive-deep)';
+      btn.style.color = 'var(--cream)';
+      form.reset();
+    } else {
+      throw new Error('Form submit failed');
+    }
+  } catch (err) {
+    btn.innerHTML = originalLabel;
+    btn.disabled = false;
+    status.style.display = 'block';
+    status.style.color = '#a23';
+    status.textContent = 'Senden fehlgeschlagen. Bitte schreiben Sie uns direkt an ahoj@wearetreed.com.';
+  }
+}
+</script>
+
+
+<script>
+document.querySelectorAll('.lang a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    var lang = (a.getAttribute('hreflang') || 'cs');
+    try { localStorage.setItem('lang_pref', lang); } catch (e) {}
+  });
+});
+</script>
+
+</body>
+</html>
