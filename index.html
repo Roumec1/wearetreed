@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wearetreed | Prémiové firemní dárky na zakázku</title>
+<meta name="description" content="Nezapomenutelné firemní dárky z českého dřeva. Vymyslíme, vyrobíme, zabalíme a doručíme. Rodinná dílna na Šumpersku.">
+<link rel="canonical" href="https://wearetreed.com/">
+
+<!-- Open Graph / LinkedIn / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="wearetreed">
+<meta property="og:title" content="Nezapomenutelné firemní dárky na zakázku">
+<meta property="og:description" content="Dřevěné firemní dárky s vaším logem z rodinné dílny na Šumpersku. Vymyslíme, vyrobíme, zabalíme, doručíme.">
+<meta property="og:url" content="https://wearetreed.com/">
+<meta property="og:image" content="https://wearetreed.com/images/hero.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1280">
+<meta property="og:locale" content="cs_CZ">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nezapomenutelné firemní dárky na zakázku">
+<meta name="twitter:description" content="Dřevěné firemní dárky s vaším logem z rodinné dílny na Šumpersku.">
+<meta name="twitter:image" content="https://wearetreed.com/images/hero.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#3C5F27">
+
+<!-- Preload hero (above-the-fold LCP) -->
+<link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
+
+<!-- TODO[analytics]: enable one of these once deployed.
+<script defer data-domain="wearetreed.com" src="https://plausible.io/js/script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+-->
+
+<style>
+/* ==========================================================
+   Design system — extracted from live wearetreed.com
+   Palette: olive #3C5F27 (primary text & accent),
+            mint  #9BCA82 (CTA bg, highlights),
+            cream #F0EFE9 (page bg),
+            paper #E8E7DE (secondary bg),
+            white #FFFFFF
+   Type: system-ui sans; big light h1, heavy narrative h2, small product h3
+   Buttons: pill — 60px/200px radius, olive on mint or olive on cream
+   ========================================================== */
+:root {
+  --olive: #3C5F27;
+  --olive-deep: #2E4B1E;
+  --mint: #9BCA82;
+  --mint-bright: #B4DE9A;
+  --mint-deep: #7FAF66;
+  --cream: #F0EFE9;
+  --paper: #E8E7DE;
+  --paper-2: #EEEEEE;
+  --white: #FFFFFF;
+  --ink: #1A1A1A;
+  --line: rgba(60, 95, 39, 0.14);
+  --line-strong: rgba(60, 95, 39, 0.28);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background: var(--cream);
+  color: var(--olive);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ---- Typography scale from live site ---- */
+h1 { font-size: clamp(40px, 5.4vw, 72px); line-height: 1.1; font-weight: 400; letter-spacing: -0.01em; color: var(--olive); }
+h2.lead { font-size: clamp(26px, 3vw, 40px); line-height: 1.2; font-weight: 700; color: var(--olive); letter-spacing: -0.005em; }
+h2.section { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.1; font-weight: 600; color: var(--olive); letter-spacing: -0.01em; }
+h3 { font-size: 18px; font-weight: 600; color: var(--olive); line-height: 1.3; }
+p { color: var(--olive); }
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
+.eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; color: var(--olive); text-transform: uppercase; opacity: 0.8; }
+.tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--paper); color: var(--olive); border-radius: 999px; font-size: 13px; font-weight: 500; }
+.tag.mint { background: var(--mint); }
+
+/* ---- Buttons: pill, 8-20px, 60px radius, olive on mint ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 24px;
+  background: var(--mint); color: var(--olive);
+  font-size: 16px; font-weight: 600;
+  border-radius: 60px; border: 0;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--mint-bright); transform: translateY(-1px); }
+.btn svg { width: 16px; height: 16px; transition: transform 0.2s; }
+.btn:hover svg { transform: translateX(3px); }
+.btn.ghost { background: var(--paper); }
+.btn.ghost:hover { background: var(--paper-2); }
+.btn.outline { background: transparent; border: 1.5px solid var(--olive); }
+.btn.outline:hover { background: var(--olive); color: var(--cream); }
+.btn.light { background: var(--cream); color: var(--olive); }
+.btn.white { background: var(--white); color: var(--olive); }
+.btn.lg { padding: 16px 32px; font-size: 17px; }
+
+/* ---- Top bar (small trust + 24h) ---- */
+.topbar { background: var(--olive); color: var(--cream); font-size: 13px; }
+.topbar-inner { display: flex; justify-content: center; align-items: center; gap: 24px; padding: 10px 20px; flex-wrap: wrap; }
+.topbar-chip { display: inline-flex; align-items: center; gap: 8px; }
+.topbar-dot { width: 7px; height: 7px; background: var(--mint); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.topbar a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---- Nav: pill links, olive CTA ---- */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(240, 239, 233, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 0; }
+.logo { font-size: 22px; font-weight: 600; color: var(--olive); letter-spacing: -0.02em; }
+.logo span { color: var(--mint-deep); }
+.nav-pills { display: flex; gap: 8px; list-style: none; }
+.nav-pills a { padding: 8px 16px; background: var(--paper); color: var(--olive); border-radius: 999px; font-size: 15px; font-weight: 500; transition: background 0.2s; }
+.nav-pills a:hover { background: var(--paper-2); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang { display: flex; gap: 2px; font-size: 13px; font-weight: 500; }
+.lang a { padding: 6px 10px; border-radius: 999px; opacity: 0.6; }
+.lang a.active { background: var(--olive); color: var(--cream); opacity: 1; }
+@media (max-width: 980px) {
+  .nav-pills { display: none; }
+}
+
+/* ---- HERO: dark image backdrop, white text ---- */
+.hero { position: relative; min-height: clamp(560px, 78vh, 820px); display: flex; align-items: flex-end; color: var(--cream); overflow: hidden; padding-bottom: 60px; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,36,16,0.35) 0%, rgba(26,36,16,0.15) 35%, rgba(26,36,16,0.75) 100%); }
+.hero-inner { position: relative; z-index: 1; width: 100%; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 60px; align-items: end; padding-top: 120px; }
+.hero-tag { color: var(--mint-bright); font-size: 14px; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 18px; display: inline-flex; align-items: center; gap: 12px; }
+.hero-tag::before { content: ""; width: 32px; height: 1px; background: var(--mint-bright); }
+.hero h1 { color: var(--cream); max-width: 14ch; font-weight: 300; }
+.hero-sub { max-width: 40ch; color: rgba(240, 239, 233, 0.85); font-size: 17px; margin-top: 24px; line-height: 1.5; }
+.hero-ctas { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-side { align-self: end; }
+.hero-hash { font-size: 14px; font-weight: 500; color: var(--mint-bright); letter-spacing: 0.1em; margin-bottom: 10px; }
+.hero-pipes { font-size: 15px; color: rgba(240,239,233,0.9); line-height: 1.8; }
+.hero-pipes strong { color: var(--cream); font-weight: 600; }
+.hero-scroll { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); color: var(--mint-bright); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; z-index: 2; opacity: 0.8; }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 30px; padding-top: 80px; }
+}
+
+/* ---- Clients strip ---- */
+.clients { padding: 60px 0 40px; text-align: center; }
+.clients-label { font-size: 15px; color: var(--olive); font-weight: 500; margin-bottom: 28px; opacity: 0.8; }
+.clients-label strong { font-weight: 700; }
+.logos-track-wrap { overflow: hidden; }
+.logos-track { display: flex; gap: 72px; animation: scroll 30s linear infinite; width: max-content; align-items: center; }
+.logos-track img { max-height: 28px; width: auto; filter: brightness(0) saturate(100%) invert(25%) sepia(33%) saturate(757%) hue-rotate(54deg) brightness(92%) contrast(93%); opacity: 0.75; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---- Narrative section (big olive h2 on cream) ---- */
+.narrative { padding: clamp(60px, 8vw, 120px) 0; }
+.narrative-inner { max-width: 900px; }
+.narrative h2 { margin-top: 14px; }
+.narrative-cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---- Products grid ---- */
+.products-section { padding: clamp(40px, 6vw, 90px) 0 clamp(60px, 8vw, 120px); }
+.products-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; }
+.products-head h2 { max-width: 20ch; }
+.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.product { background: var(--paper); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s; }
+.product:hover { transform: translateY(-4px); }
+.product-img { aspect-ratio: 4/5; background: var(--paper-2); overflow: hidden; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.product:hover .product-img img { transform: scale(1.04); }
+.product-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.product h3 { font-size: 18px; font-weight: 600; }
+.product p { font-size: 14px; line-height: 1.5; opacity: 0.85; flex: 1; }
+.product-foot { display: flex; justify-content: space-between; align-items: baseline; padding-top: 14px; border-top: 1px solid var(--line); margin-top: 8px; }
+.product-from { font-size: 12px; opacity: 0.7; }
+.product-price { font-size: 18px; font-weight: 600; }
+@media (max-width: 1100px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .products-grid { grid-template-columns: 1fr; } }
+
+/* ---- Packaging feature panel (dark green) ---- */
+.packaging { padding: clamp(60px, 8vw, 120px) 0; background: var(--olive); color: var(--cream); position: relative; }
+.packaging * { color: var(--cream); }
+.packaging-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.packaging .eyebrow { color: var(--mint-bright); opacity: 1; }
+.packaging h2 { color: var(--cream); margin-top: 14px; }
+.packaging p { color: rgba(240, 239, 233, 0.85); margin-top: 20px; max-width: 46ch; line-height: 1.55; }
+.packaging-ctas { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+.packaging-img { aspect-ratio: 4/3; border-radius: 16px; overflow: hidden; background: var(--olive-deep); }
+.packaging-img img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) { .packaging-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Principles: 4 numbered cards ---- */
+.principles { padding: clamp(60px, 8vw, 120px) 0; }
+.principles-head { margin-bottom: 48px; max-width: 720px; }
+.principles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.principle { padding: 28px 24px 28px; background: var(--paper); border-radius: 16px; display: flex; flex-direction: column; gap: 14px; transition: background 0.2s; }
+.principle:hover { background: var(--paper-2); }
+.principle-num { font-size: 13px; font-weight: 500; color: var(--mint-deep); letter-spacing: 0.08em; }
+.principle h3 { font-size: 20px; font-weight: 600; line-height: 1.25; }
+.principle p { font-size: 14px; line-height: 1.55; opacity: 0.85; }
+@media (max-width: 1000px) { .principles-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .principles-grid { grid-template-columns: 1fr; } }
+
+/* ---- "A proč to vlastně děláme" story section ---- */
+.story { padding: clamp(60px, 8vw, 120px) 0; background: var(--paper); }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.story h2 { margin-top: 14px; }
+.story-body { color: var(--olive); font-size: 17px; line-height: 1.55; margin-top: 24px; max-width: 48ch; }
+.story-body strong { font-weight: 700; }
+.story-cta { margin-top: 28px; }
+.story-img { aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; background: var(--paper-2); }
+.story-img img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Difference / vs comparison ---- */
+.diff { padding: clamp(60px, 8vw, 120px) 0; }
+.diff-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+.diff-table { max-width: 900px; margin: 0 auto; background: var(--paper); border-radius: 20px; overflow: hidden; }
+.diff-head-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; background: var(--olive); color: var(--cream); padding: 22px 28px; gap: 20px; align-items: center; }
+.diff-head-row div:first-child { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+.diff-head-row .t { text-align: center; font-weight: 700; color: var(--mint); font-size: 17px; }
+.diff-head-row .o { text-align: center; font-weight: 500; color: rgba(240,239,233,0.6); font-size: 17px; }
+.diff-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; padding: 18px 28px; gap: 20px; align-items: center; border-top: 1px solid var(--line); }
+.diff-row > div:first-child { font-weight: 500; font-size: 15px; }
+.diff-cell { text-align: center; font-size: 14px; }
+.diff-cell.win { color: var(--olive); font-weight: 600; }
+.diff-cell.win::before { content: "✓ "; color: var(--mint-deep); font-weight: 700; }
+.diff-cell.lose { opacity: 0.6; }
+.diff-cell.lose::before { content: "✕ "; opacity: 0.7; }
+@media (max-width: 720px) { .diff-head-row, .diff-row { grid-template-columns: 1fr; text-align: left; } .diff-cell { text-align: left; } }
+
+/* ---- Process: 5 numbered steps in a row ---- */
+.process { padding: clamp(60px, 8vw, 120px) 0; background: var(--paper); }
+.process-head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; }
+.process-step { padding: 24px 20px; background: var(--cream); border-radius: 14px; position: relative; }
+.step-num { display: inline-flex; width: 32px; height: 32px; border-radius: 50%; background: var(--mint); color: var(--olive); align-items: center; justify-content: center; font-weight: 700; font-size: 15px; margin-bottom: 14px; }
+.process-step h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.process-step p { font-size: 13px; line-height: 1.5; opacity: 0.85; }
+@media (max-width: 1100px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .process-steps { grid-template-columns: 1fr; } }
+
+/* ---- Case studies ---- */
+.cases { padding: clamp(60px, 8vw, 120px) 0; }
+.cases-head { max-width: 720px; margin-bottom: 48px; }
+.cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.case { display: flex; flex-direction: column; gap: 16px; cursor: pointer; }
+.case-img { aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; position: relative; background: var(--paper); }
+.case-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.case:hover .case-img img { transform: scale(1.04); }
+.case-badge { position: absolute; top: 16px; left: 16px; background: var(--cream); color: var(--olive); padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.case h3 { font-size: 22px; font-weight: 600; line-height: 1.25; }
+.case p { font-size: 14px; opacity: 0.85; line-height: 1.5; }
+.case-link { font-size: 13px; font-weight: 600; color: var(--mint-deep); display: inline-flex; align-items: center; gap: 6px; }
+@media (max-width: 900px) { .cases-grid { grid-template-columns: 1fr; } }
+
+/* ---- Testimonial slider-ish ---- */
+.testi { padding: clamp(60px, 8vw, 120px) 0; background: var(--paper); }
+.testi-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.testi-card { background: var(--cream); padding: 32px; border-radius: 16px; display: flex; flex-direction: column; gap: 20px; }
+.testi-quote { font-size: 17px; line-height: 1.5; font-weight: 400; color: var(--olive); flex: 1; }
+.testi-quote::before { content: "“"; font-size: 36px; line-height: 0; color: var(--mint-deep); margin-right: 4px; font-family: Georgia, serif; }
+.testi-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+.testi-author strong { font-weight: 600; font-size: 15px; display: block; }
+.testi-author span { font-size: 13px; opacity: 0.75; }
+@media (max-width: 720px) { .testi-grid { grid-template-columns: 1fr; } }
+
+/* ---- Stats counters ---- */
+.stats { padding: clamp(60px, 8vw, 120px) 0; background: var(--olive); color: var(--cream); }
+.stats h2 { color: var(--cream); text-align: center; max-width: 720px; margin: 0 auto 60px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.stat { text-align: center; }
+.stat-num { font-size: clamp(56px, 7vw, 96px); line-height: 1; font-weight: 300; color: var(--mint); letter-spacing: -0.02em; }
+.stat-label { margin-top: 16px; font-size: 16px; color: rgba(240,239,233,0.88); max-width: 28ch; margin-left: auto; margin-right: auto; line-height: 1.4; }
+.stat-source { margin-top: 12px; font-size: 12px; color: rgba(240,239,233,0.55); letter-spacing: 0.05em; text-transform: uppercase; }
+@media (max-width: 720px) { .stats-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ---- FAQ ---- */
+.faq { padding: clamp(60px, 8vw, 120px) 0; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+.faq-cat-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.faq-cat-tab { padding: 8px 14px; background: var(--paper); color: var(--olive); border-radius: 999px; font-size: 14px; font-weight: 500; border: 0; transition: background 0.2s; }
+.faq-cat-tab.active { background: var(--olive); color: var(--cream); }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-top: 1px solid var(--line); padding: 22px 0; cursor: pointer; }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; font-size: 17px; font-weight: 500; gap: 20px; color: var(--olive); }
+.faq-q-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--paper); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s, background 0.2s; position: relative; }
+.faq-q-icon::before, .faq-q-icon::after { content: ""; position: absolute; background: var(--olive); border-radius: 1px; }
+.faq-q-icon::before { width: 10px; height: 2px; }
+.faq-q-icon::after { width: 2px; height: 10px; transition: transform 0.3s; }
+.faq-item.open .faq-q-icon { background: var(--mint); }
+.faq-item.open .faq-q-icon::after { transform: rotate(90deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, margin-top 0.3s; font-size: 15px; line-height: 1.6; opacity: 0.85; }
+.faq-item.open .faq-a { max-height: 400px; margin-top: 12px; }
+.faq-category { display: none; }
+.faq-category.active { display: block; }
+@media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Final CTA / quote form ---- */
+.cta { padding: clamp(70px, 10vw, 140px) 0; background: var(--mint); }
+.cta-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.cta h2 { color: var(--olive); font-size: clamp(34px, 4vw, 56px); font-weight: 600; letter-spacing: -0.01em; }
+.cta-sub { font-size: 18px; margin: 20px auto 36px; max-width: 46ch; color: var(--olive); line-height: 1.5; opacity: 0.9; }
+.cta-form { max-width: 720px; margin: 0 auto; background: var(--cream); border-radius: 20px; padding: 36px; text-align: left; box-shadow: 0 20px 50px -15px rgba(46, 75, 30, 0.25); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.form-row-1 { margin-bottom: 14px; }
+.form-field label { display: block; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.75; margin-bottom: 6px; }
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%; padding: 12px 14px; border: 1px solid var(--line);
+  background: var(--white); border-radius: 10px; font-family: inherit; font-size: 15px; color: var(--olive);
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--olive); }
+.form-field textarea { min-height: 90px; resize: vertical; }
+.form-submit { width: 100%; margin-top: 6px; padding: 16px; background: var(--olive); color: var(--cream); border: 0; border-radius: 60px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.form-submit:hover { background: var(--olive-deep); }
+.form-submit svg { width: 16px; height: 16px; }
+.cta-promises { display: flex; justify-content: center; gap: 24px; margin-top: 24px; flex-wrap: wrap; }
+.cta-promise { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--olive); opacity: 0.85; font-weight: 500; }
+.cta-promise::before { content: "✓"; color: var(--olive); font-weight: 700; }
+@media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ---- Footer ---- */
+footer { background: var(--olive); color: var(--cream); padding: 80px 0 30px; }
+footer * { color: var(--cream); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+.footer-brand { font-size: 28px; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.02em; }
+.footer-brand span { color: var(--mint); }
+.footer-tag { color: rgba(240,239,233,0.75); max-width: 32ch; font-size: 14px; }
+.footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: var(--mint); font-weight: 600; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: rgba(240,239,233,0.8); font-size: 14px; }
+.footer-col a:hover { color: var(--mint); }
+.footer-bottom { padding-top: 24px; border-top: 1px solid rgba(240,239,233,0.12); display: flex; justify-content: space-between; font-size: 13px; color: rgba(240,239,233,0.55); flex-wrap: wrap; gap: 16px; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ---- Reveal ---- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- Sticky mobile CTA ---- */
+.sticky-cta { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 90; }
+.sticky-cta .btn { width: 100%; justify-content: center; padding: 16px; box-shadow: 0 10px 30px rgba(46, 75, 30, 0.25); }
+@media (max-width: 720px) { .sticky-cta { display: block; } }
+</style>
+</head>
+<body>
+
+<!-- TODO[capacity]: optional urgency/trust bar — delete if you don't want the pressure-y vibe -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-chip"><span class="topbar-dot"></span> Odpovídáme do <strong>24 hodin</strong></span>
+    <span style="opacity:0.5">·</span>
+    <span class="topbar-chip">Rodinná dílna · Šumperk</span>
+    <span style="opacity:0.5">·</span>
+    <a href="#cta">Nezávazná poptávka →</a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">wearetreed<span>.</span></a>
+    <ul class="nav-pills">
+      <li><a href="#products">Co děláme?</a></li>
+      <li><a href="#process">Jak fungujeme?</a></li>
+      <li><a href="#cases">Case studies</a></li>
+      <li><a href="#" onclick="event.preventDefault()">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang">
+        <a href="#" class="active" onclick="event.preventDefault()">CZ</a>
+        <a href="/en" onclick="event.preventDefault()">EN</a>
+      </div>
+      <a href="#cta" class="btn">Napište nám
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg" style="background-image: url('images/hero.jpg');"></div>
+  <div class="container hero-inner">
+    <div>
+      <span class="hero-tag">#WeAreTreed</span>
+      <h1>Nezapomenutelné firemní dárky na&nbsp;zakázku</h1>
+      <p class="hero-sub">Firemní předměty s vaším logem, které nezapadnou — z naší rodinné dílny na Šumpersku. Vymyslíme, vyrobíme, zabalíme a rozvezeme.</p>
+      <div class="hero-ctas">
+        <a href="#cta" class="btn lg">Zjistit více
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#products" class="btn lg light">Katalog produktů</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-hash">VYMYSLÍME · VYROBÍME · ZABALÍME · ROZVEZEME</div>
+      <div class="hero-pipes">
+        <strong>50+ firem</strong> si nás vybralo &middot; <strong>od 10 ks</strong> &middot; <strong>výroba v ČR</strong>
+      </div>
+    </div>
+  </div>
+  <span class="hero-scroll">Scroll ↓</span>
+</section>
+
+<!-- Clients -->
+<section class="clients">
+  <div class="container">
+    <p class="clients-label">Pomohli jsme značkám, <strong>které znáte</strong></p>
+  </div>
+  <div class="logos-track-wrap">
+    <div class="logos-track">
+      <img src="images/logos/cloudflare.svg" alt="Cloudflare" loading="lazy">
+      <img src="images/logos/mastercard.svg" alt="Mastercard" loading="lazy">
+      <img src="images/logos/bohemia.png" alt="Bohemia Interactive" loading="lazy">
+      <img src="images/logos/myco.png" alt="Myco" loading="lazy">
+      <img src="images/logos/lynkco.svg" alt="Lynk &amp; Co" loading="lazy">
+      <img src="images/logos/greencat.jpg" alt="Green Cat" loading="lazy">
+      <img src="images/logos/raturs.png" alt="Raturs Trade" loading="lazy">
+      <img src="images/logos/cloudflare.svg" alt="Cloudflare" loading="lazy">
+      <img src="images/logos/mastercard.svg" alt="Mastercard" loading="lazy">
+      <img src="images/logos/bohemia.png" alt="Bohemia Interactive" loading="lazy">
+      <img src="images/logos/myco.png" alt="Myco" loading="lazy">
+      <img src="images/logos/lynkco.svg" alt="Lynk &amp; Co" loading="lazy">
+      <img src="images/logos/greencat.jpg" alt="Green Cat" loading="lazy">
+      <img src="images/logos/raturs.png" alt="Raturs Trade" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Narrative intro -->
+<section class="narrative">
+  <div class="container narrative-inner">
+    <span class="eyebrow">Katalog</span>
+    <h2 class="lead">Firemní předměty s vaším logem, které nezapadnou — z naší rodinné dílny na Šumpersku. Vše vymyslíme, vyrobíme, zabalíme a odešleme vašim partnerům, zákazníkům nebo zaměstnancům.</h2>
+    <div class="narrative-cta">
+      <a href="#cta" class="btn">Zjistit více
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="products-head">
+      <div>
+        <span class="eyebrow">Bestsellery</span>
+        <h2 class="section" style="margin-top: 10px;">Vygravírujeme logo vaší firmy na naše bestsellery</h2>
+      </div>
+      <a href="#cta" class="btn ghost">Chci vlastní produkt →</a>
+    </div>
+    <div class="products-grid">
+      <article class="product reveal">
+        <div class="product-img"><img src="images/product-big-charger.jpg" alt="Treed Big Charger" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Treed Big Charger</h3>
+          <p>Poctivý kus dřeva, který vždy přitáhne pozornost. Slouží jako odkladač na všechny každodenní nezbytnosti a navíc bezdrátově nabíjí iPhone, Android nebo kompatibilní příslušenství.</p>
+          <!-- TODO[price]: verify orientation price at 100 ks -->
+          <div class="product-foot"><span class="product-from">Od 100 ks</span><span class="product-price">1 800 Kč</span></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <!-- TODO[product-swap]: v5 had Pokladnička (450 Kč) here — swapped to Treed Notebook since we have a hero-quality photo. Say the word if you want Pokladnička back. -->
+        <div class="product-img"><img src="images/product-notebook.jpg" alt="Treed Notebook — dřevěný zápisník" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Treed Notebook</h3>
+          <p>Dřevěný zápisník v ořechovém provedení s ručně šitou vazbou. Vhodný pro klíčové klienty, kongresy a dárky, které si lidé skutečně nechají na stole.</p>
+          <!-- TODO[price]: confirm notebook price at 50 ks -->
+          <div class="product-foot"><span class="product-from">Od 50 ks</span><span class="product-price">890 Kč</span></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <div class="product-img"><img src="images/product-charger.jpg" alt="Dřevěná nabíječka treed charger" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Dřevěná nabíječka treed charger</h3>
+          <p>Nabíjí iPhone, Android nebo kompatibilní příslušenství bez starostí o dráty nebo o ekologii. Skvěle se hodí na pracovní stůl, kde bude vaše logo vidět každý den.</p>
+          <!-- TODO[price]: verify orientation price at 100 ks -->
+          <div class="product-foot"><span class="product-from">Od 100 ks</span><span class="product-price">750 Kč</span></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <div class="product-img"><img src="images/product-stand.jpg" alt="Stojan na notebook treed laptop stand" loading="lazy"></div>
+        <div class="product-body">
+          <h3>Stojan na notebook treed laptop stand</h3>
+          <p>Elegantní dřevěný stojan na notebook do velikosti 16'' doplněný korkovými nožičkami a zarážkou z přírodního kaučuku. Navíc s ručně šitým lněným sáčkem na přenášení.</p>
+          <!-- TODO[price]: verify orientation price at 100 ks -->
+          <div class="product-foot"><span class="product-from">Od 100 ks</span><span class="product-price">980 Kč</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Packaging feature (dark green panel) -->
+<section class="packaging">
+  <div class="container packaging-grid">
+    <div>
+      <span class="eyebrow">Kompletní design</span>
+      <h2 class="section">Dárkové balení na míru vaší značce</h2>
+      <p>Navrhneme obaly, vložené karty a celý unboxing zážitek — ručně vyráběné, s vaším logem, připravené k doručení partnerům, zákazníkům nebo zaměstnancům.</p>
+      <div class="packaging-ctas">
+        <a href="#cta" class="btn">To chci
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#process" class="btn outline" style="color: var(--cream); border-color: var(--cream);">Jak fungujeme?</a>
+      </div>
+    </div>
+    <div class="packaging-img">
+      <img src="images/packaging.jpg" alt="Dárkové balení Treed na míru Cloudflare" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Principles 4 cards -->
+<section class="principles">
+  <div class="container">
+    <div class="principles-head">
+      <span class="eyebrow">Principy naší práce</span>
+      <h2 class="section" style="margin-top: 10px;">Proč firmy volí nás</h2>
+    </div>
+    <div class="principles-grid">
+      <div class="principle reveal">
+        <div class="principle-num">001</div>
+        <h3>Vaše logo v praktické formě</h3>
+        <p>Hrníčkům a propiskám z katalogu odzvonilo. Dnes se cení snaha, kvalita a použitelnost.</p>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-num">002</div>
+        <h3>Kompletní podpora kampaně</h3>
+        <p>S dopravou, fulfillmentem, designem nebo marketingovou podporou si nemusíte lámat hlavu.</p>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-num">003</div>
+        <h3>Unikátní materiály a udržitelnost</h3>
+        <p>Pracujeme s lokálním dřevem, technologií Myco, laky z včelího vosku a korky z Portugalska.</p>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-num">004</div>
+        <h3>Vysoce kvalitní ruční výroba</h3>
+        <p>Vše řežeme, brousíme, lakujeme, balíme a finišujeme v naší rodinné dílně v Šumperku na Moravě.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story section -->
+<section class="story" id="about">
+  <div class="container story-grid">
+    <div>
+      <span class="eyebrow">A proč to vlastně děláme?</span>
+      <h2 class="section" style="margin-top: 10px;">Ručně vyráběné reklamní předměty z&nbsp;rodinné dílny</h2>
+      <p class="story-body">Pokud máte na starosti obchod nebo marketing, firemní dárky pro vás nejspíš nejsou novým tématem. <strong>I my jsme hledali originální a kvalitní řešení, které by skutečně potěšilo.</strong> Nenašli jsme ho, a tak jsme je začali vyrábět sami.</p>
+      <a href="#cases" class="btn ghost story-cta">Prohlédnout case studies →</a>
+    </div>
+    <div class="story-img">
+      <img src="images/workshop-team.jpg" alt="Tým Treed v rodinné dílně v Šumperku" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Difference -->
+<section class="diff">
+  <div class="container">
+    <div class="diff-head">
+      <span class="eyebrow">V čem je tedy rozdíl?</span>
+      <h2 class="section" style="margin-top: 10px;">Ručně vyráběné vs. obyčejný reklamní předmět</h2>
+    </div>
+    <div class="diff-table">
+      <div class="diff-head-row">
+        <div>Kritérium</div>
+        <div class="t">Wearetreed</div>
+        <div class="o">Obyčejný reklamní předmět</div>
+      </div>
+      <div class="diff-row"><div>Doprava v rámci služby</div><div class="diff-cell win">Ano</div><div class="diff-cell lose">Zvlášť</div></div>
+      <div class="diff-row"><div>Bezproblémové skladování</div><div class="diff-cell win">Ano</div><div class="diff-cell lose">Řešíte sami</div></div>
+      <div class="diff-row"><div>Balení na míru</div><div class="diff-cell win">Ano</div><div class="diff-cell lose">Standard</div></div>
+      <div class="diff-row"><div>Ruční výroba v ČR</div><div class="diff-cell win">Ano</div><div class="diff-cell lose">Zřídka</div></div>
+      <div class="diff-row"><div>Přehled nad celým procesem</div><div class="diff-cell win">Ano</div><div class="diff-cell lose">Fragmentováno</div></div>
+      <div class="diff-row"><div>Přidaná hodnota</div><div class="diff-cell win">Příběh, kvalita</div><div class="diff-cell lose">Logo na skladovce</div></div>
+      <div class="diff-row"><div>Udržitelnost</div><div class="diff-cell win">Standard</div><div class="diff-cell lose">Výjimka</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Process 5 steps -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-head">
+      <span class="eyebrow">Jak to celé probíhá?</span>
+      <h2 class="section" style="margin-top: 10px;">Od poptávky k&nbsp;doručení</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">1</div>
+        <h3>Vyplníte poptávku</h3>
+        <p>Zbytek už je na nás. Nezavazujete se k ničemu, jen kliknete na tlačítko Nezávazně poptat a my se sami ozveme.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">2</div>
+        <h3>Zavoláme si</h3>
+        <p>Řeknete nám, co by vám udělalo radost. My se doptáme na detaily a společně vymyslíme, co s tím.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">3</div>
+        <h3>Vytvoříme vzorek</h3>
+        <p>Pošleme vám cenovku, nápady, vizuály a případně i vzorek. Ať víte, jak může výsledek vypadat ještě než řeknete ano.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">4</div>
+        <h3>Potvrdíte vzhled</h3>
+        <p>Když si plácneme, zadáme ruční výrobu u nás na dílně a dohlédneme, aby všechno sedlo do puntíku.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">5</div>
+        <h3>My doručujeme</h3>
+        <p>Na jednu adresu nebo na padesát. V krabičce na míru, s vaším logem i obsahem přesně podle vašich představ.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="#cta" class="btn lg">Nezávazně poptat
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Case studies -->
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="cases-head">
+      <span class="eyebrow">Pro koho tu jsme?</span>
+      <h2 class="section" style="margin-top: 10px;">Výjimečné vztahy si zkrátka zasloužíte. Ať už jste menší firma nebo nadnárodní hráč.</h2>
+    </div>
+    <div class="cases-grid">
+      <a href="cloudflare.html" class="case reveal">
+        <div class="case-img">
+          <img src="images/case-cloudflare.jpg" alt="Cloudflare direct mailer" loading="lazy">
+          <span class="case-badge">Cloudflare</span>
+        </div>
+        <h3>Direct mailer pro Cloudflare</h3>
+        <p>Jak jsme pomohli prodat bezpečnostní software CTOs největších českých firem.</p>
+        <span class="case-link">Číst případovku →</span>
+      </a>
+      <a href="myco.html" class="case reveal">
+        <div class="case-img">
+          <img src="images/case-myco.jpg" alt="Houbový parfém Myco" loading="lazy">
+          <span class="case-badge">Myco</span>
+        </div>
+        <h3>Houbový parfém ve spolupráci s Myco</h3>
+        <p>Vyrobili jsme s kyjovským startupem Myco první houbový parfém na světě.</p>
+        <span class="case-link">Číst případovku →</span>
+      </a>
+      <a href="bohemia.html" class="case reveal">
+        <div class="case-img">
+          <img src="images/case-bohemia.jpg" alt="Bohemia Interactive merch" loading="lazy">
+          <span class="case-badge">Bohemia Interactive</span>
+        </div>
+        <h3>Postapo merch pro Bohemia Interactive</h3>
+        <p>Navrhli a vyrobili jsme nový produkt pro hráčskou základnu survivor hitu DayZ.</p>
+        <span class="case-link">Číst případovku →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testi">
+  <div class="container">
+    <div class="testi-head">
+      <span class="eyebrow">Říkají klienti</span>
+      <h2 class="section" style="margin-top: 10px;">Spolupráce, z&nbsp;nichž máme radost</h2>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <p class="testi-quote">Spolupráce s Wearetreed je radost — rychlá domluva, skvělá komunikace a hlavně ochota vymyslet produkt na míru našim potřebám. Výsledek krásně zapadl do konceptu našich myceliových difuzerů a celé to díky nim dostalo přírodní šmrnc. Díky, že do toho jdete srdcem (a udržitelně)!</p>
+        <div class="testi-author">
+          <div>
+            <strong>Eva Minčíková</strong>
+            <span>Myco s.r.o.</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <p class="testi-quote">Udržitelný přístup je součástí DNA naší společnosti. Dřevěné wearetreed nabíječky byly hlavním dárkem pro B2B klienty na našich fintechových eventech v Evropě. Odezva byla velmi pozitivní — někteří klienti po skončení eventu žádali o další kusy a informace pro své marketingové týmy.</p>
+        <div class="testi-author">
+          <div>
+            <strong>Tomáš Doležal</strong>
+            <span>Mastercard · 10–12.2022</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <p class="testi-quote">S Wearetreed rádi spolupracujeme. Naše poslední zakázka proběhla na jedničku a vše proběhlo v naprostém pořádku. Vlastně nadstandardně — zboží nám dokonce dovezli osobně a šibeniční termín jsme díky tomu zvládli. Své práci rozumí a vždy pomůžou a poradí.</p>
+        <div class="testi-author">
+          <div>
+            <strong>Kateřina Pečená</strong>
+            <span>Marketing Manager · Green Cat</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <p class="testi-quote">Jako malá firma se zaměřením na úsporu energie v průmyslu je smyslem naší práce přispívat k zelenější planetě. Když jsme hledali dárky pro naše kolegy, u Wearetreed jsme našli kombinaci nejen udržitelnosti, ale i elegantních doplňků pro každodenní použití doma i v kanceláři.</p>
+        <div class="testi-author">
+          <div>
+            <strong>David Hořava</strong>
+            <span>HE Consulting s.r.o.</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container">
+    <h2 class="section" style="color: var(--cream);">Dobře vybraný dárek dělá byznys</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num" data-target="80">80%</div>
+        <div class="stat-label">Obdarovaných si značku pamatuje i&nbsp;po roce.</div>
+        <div class="stat-source">Sendoso, 2023</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="79">79%</div>
+        <div class="stat-label">Obdarovaných si vytvoří příznivější názor na&nbsp;značku.</div>
+        <div class="stat-source">Giftsenda, 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="68">68%</div>
+        <div class="stat-label">Dotázaných zahájilo obchodní spolupráci po&nbsp;obdržení dárku.</div>
+        <div class="stat-source">Postal.com, 2022</div>
+      </div>
+    </div>
+    <!-- TODO[stats]: verify exact percentages from the three sources — currently using industry-reported figures -->
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <span class="eyebrow">FAQ</span>
+        <h2 class="section" style="margin-top: 10px;">Otázky, které by vás mohly zrovna teď napadnout</h2>
+        <div class="faq-cat-tabs">
+          <button class="faq-cat-tab active" data-cat="general">Obecné</button>
+          <button class="faq-cat-tab" data-cat="process">Proces</button>
+          <button class="faq-cat-tab" data-cat="delivery">Doprava</button>
+          <button class="faq-cat-tab" data-cat="custom">Personalizace</button>
+          <button class="faq-cat-tab" data-cat="sustain">Udržitelnost</button>
+        </div>
+      </div>
+      <div>
+        <div class="faq-category active" data-cat="general">
+          <div class="faq-list">
+            <div class="faq-item open"><div class="faq-q">Jaké typy firemních dárků nabízíte?<div class="faq-q-icon"></div></div><div class="faq-a">Nabízíme širokou škálu ekologických dárků z přírodních materiálů — dřevěné bezdrátové nabíječky, ergonomické podložky pod notebook, organizéry na stůl, dřevěné vůně do auta. Dále dárkové krabice kombinující produkty naší dílny a dalších lokálních manufaktur.</div></div>
+            <div class="faq-item"><div class="faq-q">Jsou všechny produkty z udržitelných materiálů?<div class="faq-q-icon"></div></div><div class="faq-a">Všechny naše produkty vyrábíme s důrazem na udržitelnost. Používáme lokální dřevo, ekologické laky a recyklovatelné obaly.</div></div>
+            <div class="faq-item"><div class="faq-q">Můžeme si před objednávkou prohlédnout vzorky?<div class="faq-q-icon"></div></div><div class="faq-a">Nabízíme možnost objednání vzorku před finální objednávkou, případně i několika variant / iterací. Kontaktujte nás pro více informací.</div></div>
+            <div class="faq-item"><div class="faq-q">Jaké je minimální množství objednávky?<div class="faq-q-icon"></div></div><div class="faq-a">Minimální množství objednávky závisí na konkrétním produktu a úrovni personalizace. Standardně je to <strong>od 10 kusů s gravírováním</strong>.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="process">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Jak dlouho trvá výroba zakázkové objednávky?<div class="faq-q-icon"></div></div><div class="faq-a">Obvykle <strong>1–4 týdny</strong> v závislosti na složitosti personalizace a množství objednávky.</div></div>
+            <div class="faq-item"><div class="faq-q">Provádíte kontrolu kvality před zahájením výroby?<div class="faq-q-icon"></div></div><div class="faq-a">Každý návrh prochází schválením a produkty jsou kontrolovány před odesláním.</div></div>
+            <div class="faq-item"><div class="faq-q">Jak zajišťujete konzistentní kvalitu u velkých objednávek?<div class="faq-q-icon"></div></div><div class="faq-a">Používáme moderní výrobní technologie i manuální kontrolu kvality při každém kroku výroby.</div></div>
+            <div class="faq-item"><div class="faq-q">Poskytujete na produkty záruku?<div class="faq-q-icon"></div></div><div class="faq-a">Na všechny naše produkty nabízíme standardní záruku <strong>2 roky</strong>.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="delivery">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Jaká je obvyklá doba dodání pro velké objednávky?<div class="faq-q-icon"></div></div><div class="faq-a">Standardně <strong>2–8 týdnů</strong> včetně výroby, v závislosti na objemu objednávky.</div></div>
+            <div class="faq-item"><div class="faq-q">Nabízíte expresní výrobu nebo dopravu?<div class="faq-q-icon"></div></div><div class="faq-a">V případě urgentních objednávek nás kontaktujte a domluvíme individuální možnosti.</div></div>
+            <div class="faq-item"><div class="faq-q">Je možné rozdělit dodávku na více míst?<div class="faq-q-icon"></div></div><div class="faq-a">Produkty můžeme doručit přímo vašim klientům na různé adresy dle vašeho požadavku.</div></div>
+            <div class="faq-item"><div class="faq-q">Poskytujete sledování zásilky?<div class="faq-q-icon"></div></div><div class="faq-a">Ano, po odeslání objednávky vám zašleme sledovací číslo.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="custom">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Můžeme na produkty přidat naše firemní logo?<div class="faq-q-icon"></div></div><div class="faq-a">Ano, nabízíme různé možnosti brandingu — laserové gravírování, úpravy obalů na míru včetně grafických prací, případně výroba produktu přímo reflektujícího logo vaší firmy.</div></div>
+            <div class="faq-item"><div class="faq-q">Nabízíte i zcela zakázkovou výrobu produktů?<div class="faq-q-icon"></div></div><div class="faq-a">Pokud máte specifickou představu o produktu, rádi s vámi projdeme možnosti a navrhneme unikátní řešení.</div></div>
+            <div class="faq-item"><div class="faq-q">Můžeme před objednáním vidět digitální náhled?<div class="faq-q-icon"></div></div><div class="faq-a">Po schválení návrhu vám zašleme vizualizaci nebo v některých případech i fyzický prototyp.</div></div>
+          </div>
+        </div>
+        <div class="faq-category" data-cat="sustain">
+          <div class="faq-list">
+            <div class="faq-item"><div class="faq-q">Jak zajišťujete udržitelnost své výroby?<div class="faq-q-icon"></div></div><div class="faq-a">Využíváme lokální dřevo, ekologické barvy a obaly. Naše výroba je zaměřena na minimalizaci odpadu.</div></div>
+            <div class="faq-item"><div class="faq-q">Kde jsou vaše produkty vyráběny?<div class="faq-q-icon"></div></div><div class="faq-a">Všechny produkty vyrábíme ručně v <strong>Šumperku</strong> v České republice.</div></div>
+            <div class="faq-item"><div class="faq-q">Nabízíte ekologické varianty balení?<div class="faq-q-icon"></div></div><div class="faq-a">Všechny naše produkty jsou standardně baleny v recyklovatelných nebo biologicky rozložitelných obalech.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA / Form -->
+<section class="cta" id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="eyebrow" style="color: var(--olive); opacity: 0.9;">Začněme</span>
+      <h2 style="margin-top: 14px;">Pošlete brief — odpovíme do 24 hodin</h2>
+      <p class="cta-sub">Stačí stručně — co potřebujete, pro koho a kdy. Zbytek vyřešíme spolu.</p>
+      <!-- TODO[form-endpoint]: replace YOUR_FORMSPREE_ID below with your Formspree form ID.
+           Sign up at formspree.io → create form → copy the 8-char ID from https://formspree.io/f/XXXXXXXX -->
+      <form class="cta-form"
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+            onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_subject" value="Nová poptávka z wearetreed.com">
+        <input type="hidden" name="_language" value="cs">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div class="form-field"><label>Jméno</label><input type="text" name="jmeno" required placeholder="Jan Novák"></div>
+          <div class="form-field"><label>Firma</label><input type="text" name="firma" required placeholder="Acme s.r.o."></div>
+        </div>
+        <div class="form-row-1">
+          <div class="form-field"><label>Pracovní e-mail</label><input type="email" name="email" required placeholder="jan@acme.cz"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label>Počet kusů</label>
+            <select name="pocet_kusu"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Ještě nevím</option></select>
+          </div>
+          <div class="form-field"><label>Termín</label>
+            <select name="termin"><option>Do měsíce</option><option>Do 2–3 měsíců</option><option>Q4 / Vánoce</option><option>Jen se orientuji</option></select>
+          </div>
+        </div>
+        <div class="form-row-1">
+          <div class="form-field"><label>Pár slov k projektu (volitelné)</label><textarea name="zprava" placeholder="Event, cílová skupina, představa o produktu…"></textarea></div>
+        </div>
+        <button type="submit" class="form-submit">Odeslat poptávku
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-status" aria-live="polite" style="margin-top: 16px; display: none; color: var(--olive); font-weight: 600;"></p>
+      </form>
+      <div class="cta-promises">
+        <span class="cta-promise">Odpověď do 24 h</span>
+        <span class="cta-promise">Nezávazná</span>
+        <span class="cta-promise">Fyzický vzorek</span>
+        <span class="cta-promise">GDPR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">wearetreed<span>.</span></div>
+        <p class="footer-tag">Prémiové firemní dárky z rodinné dílny na Šumpersku. České řemeslo, udržitelné materiály, příběh v každém kusu.</p>
+      </div>
+      <div class="footer-col"><h4>Web</h4><ul><li><a href="#products">Co děláme?</a></li><li><a href="#process">Jak fungujeme?</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">O nás</a></li></ul></div>
+      <!-- TODO[phone]: replace +420 000 000 000 with real number -->
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="tel:+420000000000">+420 000 000 000</a></li><li><a href="#">Šumperk, ČR</a></li></ul></div>
+      <div class="footer-col"><h4>Sledujte</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Behance</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 wearetreed · Všechna práva vyhrazena</span><span>Vyrobeno v Česku</span></div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#cta" class="btn">Napište nám
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+<script>
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+// FAQ category tabs
+document.querySelectorAll('.faq-cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.faq-cat-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.faq-category').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.faq-category[data-cat="${tab.dataset.cat}"]`).classList.add('active');
+  });
+});
+
+// Stats counter (animate 0 → target when visible)
+const statIo = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.target, 10);
+    let cur = 0;
+    const step = Math.max(1, Math.round(target / 50));
+    const iv = setInterval(() => {
+      cur += step;
+      if (cur >= target) { cur = target; clearInterval(iv); }
+      el.textContent = cur + '%';
+    }, 24);
+    statIo.unobserve(el);
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.stat-num').forEach(el => statIo.observe(el));
+
+// Form handler — posts to Formspree via fetch (stays on page)
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  const status = form.querySelector('.form-status');
+  const originalLabel = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Odesílám…';
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      btn.innerHTML = '✓ Odesláno — ozveme se do 24 h';
+      btn.style.background = 'var(--olive-deep)';
+      btn.style.color = 'var(--cream)';
+      form.reset();
+    } else {
+      throw new Error('Form submit failed');
+    }
+  } catch (err) {
+    btn.innerHTML = originalLabel;
+    btn.disabled = false;
+    status.style.display = 'block';
+    status.style.color = '#a23';
+    status.textContent = 'Odeslání selhalo. Napište nám prosím přímo na ahoj@wearetreed.com.';
