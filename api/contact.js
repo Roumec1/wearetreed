@@ -8,10 +8,10 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
 
-  const { name, email, message } = req.body;
+  const { name, email, message, company, quantity, timeline } = req.body;
 
   // Basic validation
-  if (!name || !email || !message) {
+  if (!name || !email) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
@@ -44,10 +44,13 @@ export default async function handler(req, res) {
           <div style="font-family:sans-serif;max-width:600px">
             <h2 style="color:#3C5F27;margin-bottom:1.5rem">Nová poptávka z webu</h2>
             <table style="width:100%;border-collapse:collapse">
-              <tr><td style="padding:.5rem 0;color:#666;width:100px"><strong>Jméno:</strong></td><td>${escapeHtml(name)}</td></tr>
+              <tr><td style="padding:.5rem 0;color:#666;width:120px"><strong>Jméno:</strong></td><td>${escapeHtml(name)}</td></tr>
               <tr><td style="padding:.5rem 0;color:#666"><strong>Email:</strong></td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
+              ${company ? `<tr><td style="padding:.5rem 0;color:#666"><strong>Společnost:</strong></td><td>${escapeHtml(company)}</td></tr>` : ''}
+              ${quantity ? `<tr><td style="padding:.5rem 0;color:#666"><strong>Množství:</strong></td><td>${escapeHtml(quantity)}</td></tr>` : ''}
+              ${timeline ? `<tr><td style="padding:.5rem 0;color:#666"><strong>Termín:</strong></td><td>${escapeHtml(timeline)}</td></tr>` : ''}
             </table>
-            <div style="margin-top:1.5rem;padding:1rem;background:#F0EFE9;border-left:3px solid #3C5F27;white-space:pre-wrap">${escapeHtml(message)}</div>
+            ${message ? `<div style="margin-top:1.5rem;padding:1rem;background:#F0EFE9;border-left:3px solid #3C5F27;white-space:pre-wrap"><strong>Zpráva:</strong><br>${escapeHtml(message)}</div>` : ''}
             <p style="margin-top:2rem;font-size:.8rem;color:#999">Odesláno z kontaktního formuláře na wearetreed.com</p>
           </div>
         `,
