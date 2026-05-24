@@ -851,22 +851,22 @@ footer * { color: var(--cream); }
         <input type="hidden" name="_language" value="cs">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
-          <div class="form-field"><label>Jméno</label><input type="text" name="jmeno" required placeholder="Jan Novák"></div>
-          <div class="form-field"><label>Firma</label><input type="text" name="firma" required placeholder="Acme s.r.o."></div>
+          <div class="form-field"><label>Jméno</label><input type="text" name="name" required placeholder="Jan Novák"></div>
+          <div class="form-field"><label>Firma</label><input type="text" name="company" required placeholder="Acme s.r.o."></div>
         </div>
         <div class="form-row-1">
           <div class="form-field"><label>Pracovní e-mail</label><input type="email" name="email" required placeholder="jan@acme.cz"></div>
         </div>
         <div class="form-row">
           <div class="form-field"><label>Počet kusů</label>
-            <select name="pocet_kusu"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Ještě nevím</option></select>
+            <select name="quantity"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Ještě nevím</option></select>
           </div>
           <div class="form-field"><label>Termín</label>
-            <select name="termin"><option>Do měsíce</option><option>Do 2–3 měsíců</option><option>Q4 / Vánoce</option><option>Jen se orientuji</option></select>
+            <select name="timeline"><option>Do měsíce</option><option>Do 2–3 měsíců</option><option>Q4 / Vánoce</option><option>Jen se orientuji</option></select>
           </div>
         </div>
         <div class="form-row-1">
-          <div class="form-field"><label>Pár slov k projektu (volitelné)</label><textarea name="zprava" placeholder="Event, cílová skupina, představa o produktu…"></textarea></div>
+          <div class="form-field"><label>Pár slov k projektu (volitelné)</label><textarea name="message" placeholder="Event, cílová skupina, představa o produktu…"></textarea></div>
         </div>
         <button type="submit" class="form-submit">Odeslat poptávku
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>

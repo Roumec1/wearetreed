@@ -830,22 +830,22 @@ footer * { color: var(--cream); }
         <input type="hidden" name="_language" value="de">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
-          <div class="form-field"><label>Name</label><input type="text" name="jmeno" required placeholder="Max Mustermann"></div>
-          <div class="form-field"><label>Firma</label><input type="text" name="firma" required placeholder="Acme GmbH"></div>
+          <div class="form-field"><label>Name</label><input type="text" name="name" required placeholder="Max Mustermann"></div>
+          <div class="form-field"><label>Firma</label><input type="text" name="company" required placeholder="Acme GmbH"></div>
         </div>
         <div class="form-row-1">
           <div class="form-field"><label>Geschäftliche E-Mail</label><input type="email" name="email" required placeholder="max@acme.de"></div>
         </div>
         <div class="form-row">
           <div class="form-field"><label>Stückzahl</label>
-            <select name="pocet_kusu"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Weiß ich noch nicht</option></select>
+            <select name="quantity"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Weiß ich noch nicht</option></select>
           </div>
           <div class="form-field"><label>Zeitrahmen</label>
-            <select name="termin"><option>Innerhalb eines Monats</option><option>Innerhalb von 2–3 Monaten</option><option>Q4 / Weihnachten</option><option>Nur zur Orientierung</option></select>
+            <select name="timeline"><option>Innerhalb eines Monats</option><option>Innerhalb von 2–3 Monaten</option><option>Q4 / Weihnachten</option><option>Nur zur Orientierung</option></select>
           </div>
         </div>
         <div class="form-row-1">
-          <div class="form-field"><label>Ein paar Worte zum Projekt (optional)</label><textarea name="zprava" placeholder="Anlass, Zielgruppe, Produktidee…"></textarea></div>
+          <div class="form-field"><label>Ein paar Worte zum Projekt (optional)</label><textarea name="message" placeholder="Anlass, Zielgruppe, Produktidee…"></textarea></div>
         </div>
         <button type="submit" class="form-submit">Anfrage senden
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
