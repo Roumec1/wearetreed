@@ -23,11 +23,10 @@ export default async function handler(req, res) {
   const RESEND_KEY = process.env.RESEND_API_KEY;
   if (!RESEND_KEY) {
     console.error('RESEND_API_KEY not set');
-    return res.status(500).json({ error: 'Server configuration error: RESEND_API_KEY missing' });
+    return res.status(500).json({ error: 'Server configuration error' });
   }
 
-  const TO_EMAIL = process.env.CONTACT_EMAIL || 'plant@wearetreed.com';
-  console.log('Sending email to:', TO_EMAIL, 'From sender:', email);
+  const TO_EMAIL = process.env.CONTACT_EMAIL || 'roman.unzeitig@gmail.com';
 
   try {
     const response = await fetch('https://api.resend.com/emails', {
@@ -61,13 +60,13 @@ export default async function handler(req, res) {
     if (!response.ok) {
       const err = await response.json();
       console.error('Resend error:', err);
-      return res.status(500).json({ error: 'Failed to send email', details: err });
+      return res.status(500).json({ error: 'Failed to send email' });
     }
 
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Send error:', err);
-    return res.status(500).json({ error: 'Failed to send email', details: err.message });
+    return res.status(500).json({ error: 'Failed to send email' });
   }
 }
 
