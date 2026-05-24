@@ -23,10 +23,11 @@ export default async function handler(req, res) {
   const RESEND_KEY = process.env.RESEND_API_KEY;
   if (!RESEND_KEY) {
     console.error('RESEND_API_KEY not set');
-    return res.status(500).json({ error: 'Server configuration error' });
+    return res.status(500).json({ error: 'Server configuration error: RESEND_API_KEY missing' });
   }
 
   const TO_EMAIL = process.env.CONTACT_EMAIL || 'plant@wearetreed.com';
+  console.log('Sending email to:', TO_EMAIL, 'From sender:', email);
 
   try {
     const response = await fetch('https://api.resend.com/emails', {
