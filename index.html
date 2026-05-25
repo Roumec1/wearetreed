@@ -35,13 +35,7 @@
 
 <!-- Preload hero (above-the-fold LCP) -->
 <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
-
-<!-- TODO[analytics]: enable one of these once deployed.
-<script defer data-domain="wearetreed.com" src="https://plausible.io/js/script.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
--->
-
-<style>
+  <style>
 /* ==========================================================
    Design system. Extracted from live wearetreed.com
    Palette: olive #3C5F27 (primary text & accent),
@@ -382,11 +376,11 @@ footer * { color: var(--cream); }
 })();
 </script>
 
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"wearetreed","url":"https://wearetreed.com","logo":"https://wearetreed.com/images/logo-web.png","description":"Firemní dárky z českého dřeva. Ručně dělané v Šumperku.","address":{"@type":"PostalAddress","addressLocality":"Šumperk","addressCountry":"CZ"},"email":"ahoj@wearetreed.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://wearetreed.com","name":"wearetreed","inLanguage":"cs-CZ"}</script>
 </head>
 <body>
-
-<!-- TODO[capacity]: optional urgency/trust bar. Delete if you don't want the pressure-y vibe -->
-<div class="topbar">
+      <div class="topbar">
   <div class="topbar-inner">
     <span class="topbar-chip"><span class="topbar-dot"></span> Odpovídáme do <strong>24 hodin</strong></span>
     <span style="opacity:0.5">·</span>
@@ -499,8 +493,7 @@ footer * { color: var(--cream); }
         </div>
       </article>
       <article class="product reveal">
-        <!-- TODO[product-swap]: v5 had Pokladnička (450 Kč) here. Swapped to Treed Notebook since we have a hero-quality photo. Say the word if you want Pokladnička back. -->
-        <div class="product-img"><img src="/images/product-notebook.jpg" alt="Treed Notebook. Dřevěný zápisník" loading="lazy"></div>
+      <div class="product-img"><img src="/images/product-notebook.jpg" alt="Treed Notebook. Dřevěný zápisník" loading="lazy"></div>
         <div class="product-body">
           <h3>Treed Notebook</h3>
           <p>Ořechové desky, ručně šitá vazba, papír z lihovaru. Otevřete ho na schůzce a nikdo nesahá po telefonu.</p>
@@ -771,8 +764,7 @@ footer * { color: var(--cream); }
         <div class="stat-source">Postal.com, 2022</div>
       </div>
     </div>
-    <!-- TODO[stats]: verify exact percentages from the three sources. Currently using industry-reported figures -->
-  </div>
+      </div>
 </section>
 
 <!-- FAQ -->
@@ -841,8 +833,6 @@ footer * { color: var(--cream); }
       <span class="eyebrow" style="color: var(--olive); opacity: 0.9;">Začněme</span>
       <h2 style="margin-top: 14px;">Pošlete brief. Odpovíme do 24 hodin</h2>
       <p class="cta-sub">Stačí stručně. Co potřebujete, pro koho a kdy. Zbytek vyřešíme spolu.</p>
-      <!-- TODO[form-endpoint]: replace YOUR_FORMSPREE_ID below with your Formspree form ID.
-           Sign up at formspree.io → create form → copy the 8-char ID from https://formspree.io/f/XXXXXXXX -->
       <form class="cta-form"
             action="/api/contact"
             method="POST"
@@ -891,8 +881,7 @@ footer * { color: var(--cream); }
         <p class="footer-tag">Firemní dárky z naší dílny v Šumperku. České dřevo, ruční práce, vaše logo.</p>
       </div>
       <div class="footer-col"><h4>Web</h4><ul><li><a href="#products">Co děláme?</a></li><li><a href="#process">Jak fungujeme?</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">O nás</a></li></ul></div>
-      <!-- TODO[phone]: replace +420 000 000 000 with real number -->
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="tel:+420000000000">+420 000 000 000</a></li><li><a href="#">Šumperk, ČR</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="#">Šumperk, ČR</a></li></ul></div>
       <div class="footer-col"><h4>Sledujte</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Behance</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 wearetreed · Všechna práva vyhrazena</span><span>Vyrobeno v Česku</span></div>

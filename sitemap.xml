@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://wearetreed.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/en/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/de/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/"/>
+  </url>
+
+  <url>
+    <loc>https://wearetreed.com/bohemia</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/bohemia"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/en/bohemia</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/bohemia"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/de/bohemia</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/bohemia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/bohemia"/>
+  </url>
+
+  <url>
+    <loc>https://wearetreed.com/cloudflare</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/cloudflare"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/en/cloudflare</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/cloudflare"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/de/cloudflare</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/cloudflare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/cloudflare"/>
+  </url>
+
+  <url>
+    <loc>https://wearetreed.com/myco</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/myco"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/myco"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/myco"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/myco"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/en/myco</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/myco"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/myco"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/myco"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/myco"/>
+  </url>
+  <url>
+    <loc>https://wearetreed.com/de/myco</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://wearetreed.com/myco"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wearetreed.com/en/myco"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wearetreed.com/de/myco"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wearetreed.com/myco"/>
+  </url>
+
+</urlset>

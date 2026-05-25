@@ -35,13 +35,7 @@
 
 <!-- Preload hero (above-the-fold LCP) -->
 <link rel="preload" as="image" href="/images/hero.jpg" fetchpriority="high">
-
-<!-- TODO[analytics]: enable one of these once deployed.
-<script defer data-domain="wearetreed.com" src="https://plausible.io/js/script.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
--->
-
-<style>
+  <style>
 /* ==========================================================
    Design system. Extracted from live wearetreed.com
    Palette: olive #3C5F27 (primary text & accent),
@@ -361,11 +355,11 @@ footer * { color: var(--cream); }
 .sticky-cta .btn { width: 100%; justify-content: center; padding: 16px; box-shadow: 0 10px 30px rgba(46, 75, 30, 0.25); }
 @media (max-width: 720px) { .sticky-cta { display: block; } }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"wearetreed","url":"https://wearetreed.com","logo":"https://wearetreed.com/images/logo-web.png","description":"Corporate gifts from Czech wood. Handmade in Šumperk.","address":{"@type":"PostalAddress","addressLocality":"Šumperk","addressCountry":"CZ"},"email":"ahoj@wearetreed.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://wearetreed.com","name":"wearetreed","inLanguage":"en-US"}</script>
 </head>
 <body>
-
-<!-- TODO[capacity]: optional urgency/trust bar. Delete if you don't want the pressure-y vibe -->
-<div class="topbar">
+      <div class="topbar">
   <div class="topbar-inner">
     <span class="topbar-chip"><span class="topbar-dot"></span> We respond within <strong>24 hours</strong></span>
     <span style="opacity:0.5">·</span>
@@ -478,8 +472,7 @@ footer * { color: var(--cream); }
         </div>
       </article>
       <article class="product reveal">
-        <!-- TODO[product-swap]: v5 had Pokladnička (450 Kč) here. Swapped to Treed Notebook since we have a hero-quality photo. Say the word if you want Pokladnička back. -->
-        <div class="product-img"><img src="/images/product-notebook.jpg" alt="Treed Notebook. Wooden notebook" loading="lazy"></div>
+      <div class="product-img"><img src="/images/product-notebook.jpg" alt="Treed Notebook. Wooden notebook" loading="lazy"></div>
         <div class="product-body">
           <h3>Treed Notebook</h3>
           <p>Walnut covers, hand-sewn binding, paper from a Czech distillery. Open it at a meeting and nobody reaches for their phone.</p>
@@ -750,8 +743,7 @@ footer * { color: var(--cream); }
         <div class="stat-source">Postal.com, 2022</div>
       </div>
     </div>
-    <!-- TODO[stats]: verify exact percentages from the three sources. Currently using industry-reported figures -->
-  </div>
+      </div>
 </section>
 
 <!-- FAQ -->
@@ -820,8 +812,6 @@ footer * { color: var(--cream); }
       <span class="eyebrow" style="color: var(--olive); opacity: 0.9;">Let's start</span>
       <h2 style="margin-top: 14px;">Send us a brief. We'll reply within 24 hours</h2>
       <p class="cta-sub">Keep it short. What you need, for whom, and by when. We'll figure out the rest together.</p>
-      <!-- TODO[form-endpoint]: replace YOUR_FORMSPREE_ID below with your Formspree form ID.
-           Sign up at formspree.io → create form → copy the 8-char ID from https://formspree.io/f/XXXXXXXX -->
       <form class="cta-form"
             action="/api/contact"
             method="POST"
@@ -870,8 +860,7 @@ footer * { color: var(--cream); }
         <p class="footer-tag">Corporate gifts from our workshop in Šumperk. Czech wood, hand-made, your logo.</p>
       </div>
       <div class="footer-col"><h4>Site</h4><ul><li><a href="#products">What we do</a></li><li><a href="#process">How we work</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">About us</a></li></ul></div>
-      <!-- TODO[phone]: replace +420 000 000 000 with real number -->
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="tel:+420000000000">+420 000 000 000</a></li><li><a href="#">Šumperk, Czech Republic</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="#">Šumperk, Czech Republic</a></li></ul></div>
       <div class="footer-col"><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Behance</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 wearetreed · All rights reserved</span><span>Made in Czechia</span></div>
