@@ -86,8 +86,9 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server configuration error' });
   }
 
-  // Leads go to the company mailbox (hardcoded so a stale CONTACT_EMAIL env var can't redirect them).
-  const TO_EMAIL = 'plant@wearetreed.com';
+  // Resend sandbox sender can only deliver to the Resend account owner (the Gmail below).
+  // Switch to plant@wearetreed.com once wearetreed.com is verified in Resend (or this project uses the formstudio Resend key).
+  const TO_EMAIL = process.env.CONTACT_EMAIL || 'roman.unzeitig@gmail.com';
 
   try {
     const response = await fetch('https://api.resend.com/emails', {
