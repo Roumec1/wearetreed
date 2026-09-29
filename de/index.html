@@ -915,6 +915,7 @@ const statIo = new IntersectionObserver((entries) => {
 document.querySelectorAll('.stat-num').forEach(el => statIo.observe(el));
 
 // Form handler. Posts to Formspree via fetch (stays on page)
+window.__formT0 = Date.now();
 async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
@@ -926,6 +927,7 @@ async function handleSubmit(e) {
   try {
     const formData = new FormData(form);
     const jsonBody = Object.fromEntries(formData.entries());
+    jsonBody._elapsed = Date.now() - (window.__formT0 || Date.now());
     const res = await fetch(form.action, {
       method: 'POST',
       body: JSON.stringify(jsonBody),

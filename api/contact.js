@@ -1,21 +1,81 @@
+// Only our own site may submit the form (plus Vercel preview deploys).
+const ALLOWED = [/^https:\/\/([a-z0-9-]+\.)*wearetreed\.com$/i, /^https:\/\/[a-z0-9-]+\.vercel\.app$/i];
+
+// Per-IP throttle (best effort — lives as long as a warm serverless instance).
+const HITS = new Map();
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 5;
+
+const SPAM_WORDS = /\b(seo|backlinks?|casino|crypto|bitcoin|forex|viagra|cialis|loan|guest ?post|rank(ing)? (your|on)|web ?traffic|telegram|whatsapp me|onlyfans|porn|betting)\b/i;
+
+function originOf(req) {
+  if (req.headers.origin) return req.headers.origin;
+  try { return new URL(req.headers.referer).origin; } catch { return ''; }
+}
+
+function spamReason(req, b) {
+  if (b._gotcha) return 'honeypot';
+  const elapsed = Number(b._elapsed);
+  if (!Number.isFinite(elapsed) || elapsed < 3000) return 'too-fast';
+  const text = [b.name, b.company, b.message].filter(Boolean).join(' ');
+  if (/[Ѐ-ӿ一-鿿]/.test(text)) return 'script';
+  if (/https?:\/\/|www\./i.test(b.name || '') || /https?:\/\/|www\./i.test(b.company || '')) return 'link-in-name';
+  if (((b.message || '').match(/https?:\/\//gi) || []).length >= 2) return 'links';
+  if (SPAM_WORDS.test(text)) return 'keywords';
+  return null;
+}
+
+function rateLimited(ip) {
+  const now = Date.now();
+  const recent = (HITS.get(ip) || []).filter((t) => now - t < WINDOW_MS);
+  recent.push(now);
+  HITS.set(ip, recent);
+  return recent.length > MAX_PER_WINDOW;
+}
+
 export default async function handler(req, res) {
-  // Only allow POST
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  const origin = originOf(req);
+  const allowed = ALLOWED.some((re) => re.test(origin));
+
+  if (allowed && req.headers.origin) {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    res.setHeader('Vary', 'Origin');
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
+
+  if (req.method === 'OPTIONS') return res.status(204).end();
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+
+  // Real browsers always send Origin/Referer on a form POST; scripts hitting the API directly don't.
+  if (!allowed) {
+    console.warn('contact: blocked origin', origin || '(none)');
+    return res.status(403).json({ error: 'Forbidden' });
   }
 
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
+  if (rateLimited(ip)) {
+    console.warn('contact: rate limited', ip);
+    return res.status(429).json({ error: 'Too many requests' });
+  }
 
-  const { name, email, message, company, quantity, timeline } = req.body;
+  const b = req.body || {};
+  const { name, email, message, company, quantity, timeline } = b;
 
-  // Basic validation
+  // Spam: pretend success so bots don't adapt, but send nothing.
+  const reason = spamReason(req, b);
+  if (reason) {
+    console.warn('contact: spam dropped —', reason, email);
+    return res.status(200).json({ success: true });
+  }
+
   if (!name || !email) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
-
-  // Simple email format check
+  if (String(name).length > 120 || String(email).length > 160 || String(company || '').length > 160 ||
+      String(message || '').length > 5000) {
+    return res.status(400).json({ error: 'Input too long' });
+  }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'Invalid email' });
   }
@@ -26,7 +86,8 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server configuration error' });
   }
 
-  const TO_EMAIL = process.env.CONTACT_EMAIL || 'roman.unzeitig@gmail.com';
+  // Leads go to the company mailbox (hardcoded so a stale CONTACT_EMAIL env var can't redirect them).
+  const TO_EMAIL = 'plant@wearetreed.com';
 
   try {
     const response = await fetch('https://api.resend.com/emails', {
