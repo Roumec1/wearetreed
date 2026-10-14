@@ -7,26 +7,26 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.wearetreed.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wearetreed.com/"/>
   </url>
   <url>
-    <loc>https://www.wearetreed.com/en/</loc>
+    <loc>https://www.wearetreed.com/en</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.wearetreed.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wearetreed.com/"/>
   </url>
   <url>
-    <loc>https://www.wearetreed.com/de/</loc>
+    <loc>https://www.wearetreed.com/de</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.wearetreed.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wearetreed.com/"/>
   </url>
 
