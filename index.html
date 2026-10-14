@@ -376,6 +376,14 @@ footer * { color: var(--cream); }
 .diff-cell.lose::before { opacity: 1; }
 .stat-source, .footer-tag, .footer-bottom { color: rgba(240,239,233,0.85); }
 .footer-col h3 { color: var(--mint-bright); }
+
+/* header: keep the container side padding (nav-inner reset it), never squash the logo, lighter phone header */
+.nav-inner { padding: 14px clamp(20px, 4vw, 40px); }
+.logo, .logo img { flex-shrink: 0; }
+@media (max-width: 720px) {
+  .topbar-inner > :not(:first-child) { display: none; }
+  .nav-right .btn { display: none; }
+}
 </style>
 
 
