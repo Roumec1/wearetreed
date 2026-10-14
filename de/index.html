@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>wearetreed | Firmengeschenke aus tschechischem Holz</title>
 <meta name="description" content="Wir fertigen Firmengeschenke mit Ihrem Logo von Hand. Aus Eiche, Nussbaum oder Esche, in unserer Werkstatt in Šumperk. Ab 10 Stück, Lieferung in 4–6 Wochen.">
-<link rel="canonical" href="https://wearetreed.com/de/">
-<link rel="alternate" hreflang="cs" href="https://wearetreed.com/">
-<link rel="alternate" hreflang="en" href="https://wearetreed.com/en/">
-<link rel="alternate" hreflang="de" href="https://wearetreed.com/de/">
-<link rel="alternate" hreflang="x-default" href="https://wearetreed.com/">
+<link rel="canonical" href="https://www.wearetreed.com/de/">
+<link rel="alternate" hreflang="cs" href="https://www.wearetreed.com/">
+<link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en/">
+<link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://www.wearetreed.com/">
 
 <!-- Open Graph / LinkedIn / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="wearetreed">
 <meta property="og:title" content="Firmengeschenke, die niemand wegwirft">
 <meta property="og:description" content="Wir fertigen Firmengeschenke mit Ihrem Logo von Hand. Aus tschechischem Holz, in unserer Werkstatt in Šumperk. Ab 10 Stück.">
-<meta property="og:url" content="https://wearetreed.com/de/">
-<meta property="og:image" content="https://wearetreed.com/images/hero.jpg">
+<meta property="og:url" content="https://www.wearetreed.com/de/">
+<meta property="og:image" content="https://www.wearetreed.com/images/hero.jpg">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1280">
 <meta property="og:locale" content="de_DE">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Firmengeschenke, die niemand wegwirft">
 <meta name="twitter:description" content="Wir fertigen Firmengeschenke mit Ihrem Logo von Hand. Aus tschechischem Holz, in unserer Werkstatt in Šumperk.">
-<meta name="twitter:image" content="https://wearetreed.com/images/hero.jpg">
+<meta name="twitter:image" content="https://www.wearetreed.com/images/hero.jpg">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -354,9 +354,19 @@ footer * { color: var(--cream); }
 .sticky-cta { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 90; }
 .sticky-cta .btn { width: 100%; justify-content: center; padding: 16px; box-shadow: 0 10px 30px rgba(46, 75, 30, 0.25); }
 @media (max-width: 720px) { .sticky-cta { display: block; } }
+
+/* a11y: stronger contrast for buttons and language links */
+.btn { color: var(--olive-deep); }
+.lang a { opacity: 0.9; }
+/* footer headings are h3 now (heading order) */
+.footer-col h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: var(--mint); font-weight: 600; }
+.footer-col li span { color: rgba(240,239,233,0.8); font-size: 14px; }
+/* Forma Studio (own manufacturing) */
+.forma { background: var(--cream); }
+.forma .story-img { aspect-ratio: 3/2; }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"wearetreed","url":"https://wearetreed.com","logo":"https://wearetreed.com/images/logo-web.png","description":"Firmengeschenke aus tschechischem Holz. Handgefertigt in Šumperk.","address":{"@type":"PostalAddress","addressLocality":"Šumperk","addressCountry":"CZ"},"email":"ahoj@wearetreed.com"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://wearetreed.com","name":"wearetreed","inLanguage":"de-DE"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"wearetreed","url":"https://www.wearetreed.com","logo":"https://www.wearetreed.com/images/logo-web.png","description":"Firmengeschenke aus tschechischem Holz. Handgefertigt in Šumperk.","address":{"@type":"PostalAddress","addressLocality":"Šumperk","addressCountry":"CZ"},"email":"ahoj@wearetreed.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.wearetreed.com","name":"wearetreed","inLanguage":"de-DE"}</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -372,12 +382,11 @@ footer * { color: var(--cream); }
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="#" class="logo"><img src="/images/logo-web.png" alt="wearetreed"></a>
+    <a href="#" class="logo"><img src="/images/logo-web.png" alt="wearetreed" width="191" height="26"></a>
     <ul class="nav-pills">
       <li><a href="#products">Was wir tun</a></li>
       <li><a href="#process">Wie wir arbeiten</a></li>
       <li><a href="#cases">Case studies</a></li>
-      <li><a href="#" onclick="event.preventDefault()">Blog</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang">
@@ -469,7 +478,7 @@ footer * { color: var(--cream); }
           <h3>Treed Big Charger</h3>
           <p>Ein massiver Eichenquader mit Platz innen für Schlüssel, Kopfhörer oder eine Uhr. Oben lädt er das Smartphone kabellos. Steht dauerhaft auf dem Schreibtisch.</p>
           <!-- TODO[price]: verify orientation price at 100 ks -->
-          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">1 800 Kč</span></div>
+          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">72 €</span></div>
         </div>
       </article>
       <article class="product reveal">
@@ -478,7 +487,7 @@ footer * { color: var(--cream); }
           <h3>Treed Notebook</h3>
           <p>Nussbaum-Einband, handgenähte Bindung, Papier aus einer tschechischen Brennerei. Öffnen Sie es im Meeting und niemand greift zum Smartphone.</p>
           <!-- TODO[price]: confirm notebook price at 50 ks -->
-          <div class="product-foot"><span class="product-from">Ab 50 Stück</span><span class="product-price">890 Kč</span></div>
+          <div class="product-foot"><span class="product-from">Ab 50 Stück</span><span class="product-price">36 €</span></div>
         </div>
       </article>
       <article class="product reveal">
@@ -487,7 +496,7 @@ footer * { color: var(--cream); }
           <h3>Holz-Ladegerät. Treed charger</h3>
           <p>Ein kabelloses Ladegerät in massivem Eichenholz. Smartphone drauflegen, Smartphone lädt. Ihr Logo brennen wir per Laser ins Holz.</p>
           <!-- TODO[price]: verify orientation price at 100 ks -->
-          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">750 Kč</span></div>
+          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">30 €</span></div>
         </div>
       </article>
       <article class="product reveal">
@@ -496,7 +505,7 @@ footer * { color: var(--cream); }
           <h3>Laptop-Ständer. Treed laptop stand</h3>
           <p>Ein Laptop-Ständer für Laptops bis 16''. Korkfüße, damit er nicht rutscht, Kautschuk-Stopper, damit der Laptop nicht abgleitet. Leinenbeutel, damit Sie ihn zum Kunden mitnehmen können.</p>
           <!-- TODO[price]: verify orientation price at 100 ks -->
-          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">980 Kč</span></div>
+          <div class="product-foot"><span class="product-from">Ab 100 Stück</span><span class="product-price">39 €</span></div>
         </div>
       </article>
     </div>
@@ -675,6 +684,21 @@ footer * { color: var(--cream); }
   </div>
 </section>
 
+<!-- Own manufacturing: Forma Studio -->
+<section class="story forma" id="forma">
+  <div class="container story-grid">
+    <div class="story-img">
+      <img src="/images/forma-cnc.webp" alt="Großformat-CNC-Fräse in der Werkstatt von Forma Studio in Šumperk" width="800" height="533" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow">Eigene Fertigung</span>
+      <h2 class="section" style="margin-top: 10px;">Mehr als Geschenke: Wir fertigen auch nach Ihrer Zeichnung.</h2>
+      <p class="story-body">Hinter wearetreed steht unsere eigene Werkstatt in Šumperk. Als <strong>Forma Studio</strong> fräsen, lasern und drucken wir dort im Auftrag: Frästeile aus MDF und Holz, Lasergravuren, Prototypen und Serien bis 10.000 Stück.</p>
+      <a href="https://formastudio.cz/de" class="btn ghost story-cta">Forma Studio: CNC, Laser, 3D-Druck →</a>
+    </div>
+  </div>
+</section>
+
 <!-- Testimonials -->
 <section class="testi">
   <div class="container">
@@ -821,22 +845,22 @@ footer * { color: var(--cream); }
         <input type="hidden" name="_language" value="de">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
-          <div class="form-field"><label>Name</label><input type="text" name="name" required placeholder="Max Mustermann"></div>
-          <div class="form-field"><label>Firma</label><input type="text" name="company" required placeholder="Acme GmbH"></div>
+          <div class="form-field"><label for="f-name">Name</label><input type="text" id="f-name" name="name" required placeholder="Max Mustermann"></div>
+          <div class="form-field"><label for="f-company">Firma</label><input type="text" id="f-company" name="company" required placeholder="Acme GmbH"></div>
         </div>
         <div class="form-row-1">
-          <div class="form-field"><label>Geschäftliche E-Mail</label><input type="email" name="email" required placeholder="max@acme.de"></div>
+          <div class="form-field"><label for="f-email">Geschäftliche E-Mail</label><input type="email" id="f-email" name="email" required placeholder="max@acme.de"></div>
         </div>
         <div class="form-row">
-          <div class="form-field"><label>Stückzahl</label>
-            <select name="quantity"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Weiß ich noch nicht</option></select>
+          <div class="form-field"><label for="f-quantity">Stückzahl</label>
+            <select id="f-quantity" name="quantity"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Weiß ich noch nicht</option></select>
           </div>
-          <div class="form-field"><label>Zeitrahmen</label>
-            <select name="timeline"><option>Innerhalb eines Monats</option><option>Innerhalb von 2–3 Monaten</option><option>Q4 / Weihnachten</option><option>Nur zur Orientierung</option></select>
+          <div class="form-field"><label for="f-timeline">Zeitrahmen</label>
+            <select id="f-timeline" name="timeline"><option>Innerhalb eines Monats</option><option>Innerhalb von 2–3 Monaten</option><option>Q4 / Weihnachten</option><option>Nur zur Orientierung</option></select>
           </div>
         </div>
         <div class="form-row-1">
-          <div class="form-field"><label>Ein paar Worte zum Projekt (optional)</label><textarea name="message" placeholder="Anlass, Zielgruppe, Produktidee…"></textarea></div>
+          <div class="form-field"><label for="f-message">Ein paar Worte zum Projekt (optional)</label><textarea id="f-message" name="message" placeholder="Anlass, Zielgruppe, Produktidee…"></textarea></div>
         </div>
         <button type="submit" class="form-submit">Anfrage senden
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -860,9 +884,9 @@ footer * { color: var(--cream); }
         <div class="footer-brand">wearetreed<span>.</span></div>
         <p class="footer-tag">Firmengeschenke aus unserer Werkstatt in Šumperk. Tschechisches Holz, Handarbeit, Ihr Logo.</p>
       </div>
-      <div class="footer-col"><h4>Web</h4><ul><li><a href="#products">Was wir tun</a></li><li><a href="#process">Wie wir arbeiten</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">Über uns</a></li></ul></div>
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="#">Šumperk, Tschechien</a></li></ul></div>
-      <div class="footer-col"><h4>Folgen</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Behance</a></li></ul></div>
+      <div class="footer-col"><h3>Web</h3><ul><li><a href="#products">Was wir tun</a></li><li><a href="#process">Wie wir arbeiten</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">Über uns</a></li></ul></div>
+      <div class="footer-col"><h3>Kontakt</h3><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><span>Šumperk, Tschechien</span></li></ul></div>
+      <div class="footer-col"><h3>Eigene Fertigung</h3><ul><li><a href="https://formastudio.cz/lohnfertigung">Forma Studio: Lohnfertigung</a></li><li><a href="https://formastudio.cz/mdf-fraesteile">MDF-Frästeile</a></li><li><a href="https://formastudio.cz/weihnachtskarten-holz">Weihnachtskarten aus Holz</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 wearetreed · Alle Rechte vorbehalten</span><span>Hergestellt in Tschechien</span></div>
   </div>
@@ -961,6 +985,22 @@ document.querySelectorAll('.lang a').forEach(function (a) {
 });
 </script>
 
+<script>
+// language hint: if the browser language differs from this page, offer the matching version (no automatic redirect)
+(function(){try{
+  var page=document.documentElement.lang.slice(0,2),nav=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase(),want=/^(cs|sk)/.test(nav)?'cs':/^de/.test(nav)?'de':/^en/.test(nav)?'en':'';
+  if(!want||want===page||localStorage.getItem('lang_hint_off')||localStorage.getItem('lang_pref')===page)return;
+  var alt=document.querySelector('link[rel="alternate"][hreflang="'+want+'"]');if(!alt)return;
+  var T={cs:['Tato stránka je i v češtině.','Číst česky →','Zavřít'],de:['Diese Seite gibt es auch auf Deutsch.','Auf Deutsch lesen →','Schließen'],en:['This page is also available in English.','Read in English →','Close']}[want];
+  var b=document.createElement('div');b.className='lang-hint';b.setAttribute('role','region');b.setAttribute('aria-label',T[0]);b.lang=want;
+  b.innerHTML='<span>'+T[0]+'</span> <a href="'+new URL(alt.href).pathname+'">'+T[1]+'</a><button type="button" aria-label="'+T[2]+'">×</button>';
+  b.style.cssText='background:#2E4B1E;color:#F0EFE9;font-size:14px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 44px 9px 16px;position:relative;text-align:center';
+  var a=b.querySelector('a');a.style.cssText='color:#B4DE9A;font-weight:600;text-decoration:underline;text-underline-offset:3px';
+  a.addEventListener('click',function(){try{localStorage.setItem('lang_pref',want);}catch(e){}});
+  var x=b.querySelector('button');x.style.cssText='position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:#F0EFE9;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px';
+  x.addEventListener('click',function(){b.remove();try{localStorage.setItem('lang_hint_off','1');}catch(e){}});
+  document.body.insertBefore(b,document.body.firstChild);
+}catch(e){}})();
+</script>
 </body>
 </html>
-                                                                                                                                                                              

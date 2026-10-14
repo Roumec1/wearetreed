@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://wearetreed.com/sitemap.xml
+Sitemap: https://www.wearetreed.com/sitemap.xml

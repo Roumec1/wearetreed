@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>wearetreed | Firemní dárky z českého dřeva</title>
 <meta name="description" content="Ručně vyrábíme firemní dárky s vaším logem. Z dubu, ořechu nebo jasanu, v dílně v Šumperku. Od 10 kusů, doručíme za 4–6 týdnů.">
-<link rel="canonical" href="https://wearetreed.com/">
-<link rel="alternate" hreflang="cs" href="https://wearetreed.com/">
-<link rel="alternate" hreflang="en" href="https://wearetreed.com/en/">
-<link rel="alternate" hreflang="de" href="https://wearetreed.com/de/">
-<link rel="alternate" hreflang="x-default" href="https://wearetreed.com/">
+<link rel="canonical" href="https://www.wearetreed.com/">
+<link rel="alternate" hreflang="cs" href="https://www.wearetreed.com/">
+<link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en/">
+<link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://www.wearetreed.com/">
 
 <!-- Open Graph / LinkedIn / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="wearetreed">
 <meta property="og:title" content="Firemní dárky, které nikdo nevyhodí">
 <meta property="og:description" content="Ručně vyrábíme firemní dárky s vaším logem. Z českého dřeva, v dílně v Šumperku. Od 10 kusů.">
-<meta property="og:url" content="https://wearetreed.com/">
-<meta property="og:image" content="https://wearetreed.com/images/hero.jpg">
+<meta property="og:url" content="https://www.wearetreed.com/">
+<meta property="og:image" content="https://www.wearetreed.com/images/hero.jpg">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1280">
 <meta property="og:locale" content="cs_CZ">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Firemní dárky, které nikdo nevyhodí">
 <meta name="twitter:description" content="Ručně vyrábíme firemní dárky s vaším logem. Z českého dřeva, v dílně v Šumperku.">
-<meta name="twitter:image" content="https://wearetreed.com/images/hero.jpg">
+<meta name="twitter:image" content="https://www.wearetreed.com/images/hero.jpg">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -354,30 +354,21 @@ footer * { color: var(--cream); }
 .sticky-cta { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 90; }
 .sticky-cta .btn { width: 100%; justify-content: center; padding: 16px; box-shadow: 0 10px 30px rgba(46, 75, 30, 0.25); }
 @media (max-width: 720px) { .sticky-cta { display: block; } }
+
+/* a11y: stronger contrast for buttons and language links */
+.btn { color: var(--olive-deep); }
+.lang a { opacity: 0.9; }
+/* footer headings are h3 now (heading order) */
+.footer-col h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: var(--mint); font-weight: 600; }
+.footer-col li span { color: rgba(240,239,233,0.8); font-size: 14px; }
+/* Forma Studio (own manufacturing) */
+.forma { background: var(--cream); }
+.forma .story-img { aspect-ratio: 3/2; }
 </style>
 
-<script>
-(function () {
-  try {
-    if (sessionStorage.getItem('lang_redirected')) return;
-    sessionStorage.setItem('lang_redirected', '1');
-    var prefStored = localStorage.getItem('lang_pref');
-    if (prefStored === 'cs') return;
-    var preferred = prefStored;
-    if (!preferred) {
-      var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      if (navLang.startsWith('en')) preferred = 'en';
-      else if (navLang.startsWith('de')) preferred = 'de';
-      else preferred = 'cs';
-    }
-    if (preferred === 'en') location.replace('/en/');
-    else if (preferred === 'de') location.replace('/de/');
-  } catch (e) {}
-})();
-</script>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"wearetreed","url":"https://wearetreed.com","logo":"https://wearetreed.com/images/logo-web.png","description":"Firemní dárky z českého dřeva. Ručně dělané v Šumperku.","address":{"@type":"PostalAddress","addressLocality":"Šumperk","addressCountry":"CZ"},"email":"ahoj@wearetreed.com"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://wearetreed.com","name":"wearetreed","inLanguage":"cs-CZ"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"wearetreed","url":"https://www.wearetreed.com","logo":"https://www.wearetreed.com/images/logo-web.png","description":"Firemní dárky z českého dřeva. Ručně dělané v Šumperku.","address":{"@type":"PostalAddress","addressLocality":"Šumperk","addressCountry":"CZ"},"email":"ahoj@wearetreed.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.wearetreed.com","name":"wearetreed","inLanguage":"cs-CZ"}</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -393,12 +384,11 @@ footer * { color: var(--cream); }
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="#" class="logo"><img src="/images/logo-web.png" alt="wearetreed"></a>
+    <a href="#" class="logo"><img src="/images/logo-web.png" alt="wearetreed" width="191" height="26"></a>
     <ul class="nav-pills">
       <li><a href="#products">Co děláme?</a></li>
       <li><a href="#process">Jak fungujeme?</a></li>
       <li><a href="#cases">Case studies</a></li>
-      <li><a href="#" onclick="event.preventDefault()">Blog</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang">
@@ -696,6 +686,21 @@ footer * { color: var(--cream); }
   </div>
 </section>
 
+<!-- Own manufacturing: Forma Studio -->
+<section class="story forma" id="forma">
+  <div class="container story-grid">
+    <div class="story-img">
+      <img src="/images/forma-cnc.webp" alt="Velkoformátová CNC frézka v dílně Forma Studio v Šumperku" width="800" height="533" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow">Vlastní výroba</span>
+      <h2 class="section" style="margin-top: 10px;">Nejen dárky. Vyrobíme i díly podle vašeho výkresu.</h2>
+      <p class="story-body">Za wearetreed stojí naše vlastní dílna v Šumperku. Pod značkou <strong>Forma Studio</strong> v ní na zakázku frézujeme, laserujeme a tiskneme: díly z MDF a dřeva, gravírování, prototypy i série až 10&nbsp;000 kusů.</p>
+      <a href="https://formastudio.cz/" class="btn ghost story-cta">Forma Studio: CNC, laser, 3D tisk →</a>
+    </div>
+  </div>
+</section>
+
 <!-- Testimonials -->
 <section class="testi">
   <div class="container">
@@ -842,22 +847,22 @@ footer * { color: var(--cream); }
         <input type="hidden" name="_language" value="cs">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
-          <div class="form-field"><label>Jméno</label><input type="text" name="name" required placeholder="Jan Novák"></div>
-          <div class="form-field"><label>Firma</label><input type="text" name="company" required placeholder="Acme s.r.o."></div>
+          <div class="form-field"><label for="f-name">Jméno</label><input type="text" id="f-name" name="name" required placeholder="Jan Novák"></div>
+          <div class="form-field"><label for="f-company">Firma</label><input type="text" id="f-company" name="company" required placeholder="Acme s.r.o."></div>
         </div>
         <div class="form-row-1">
-          <div class="form-field"><label>Pracovní e-mail</label><input type="email" name="email" required placeholder="jan@acme.cz"></div>
+          <div class="form-field"><label for="f-email">Pracovní e-mail</label><input type="email" id="f-email" name="email" required placeholder="jan@acme.cz"></div>
         </div>
         <div class="form-row">
-          <div class="form-field"><label>Počet kusů</label>
-            <select name="quantity"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Ještě nevím</option></select>
+          <div class="form-field"><label for="f-quantity">Počet kusů</label>
+            <select id="f-quantity" name="quantity"><option>10–50</option><option>50–100</option><option>100–300</option><option>300–1000</option><option>1000+</option><option>Ještě nevím</option></select>
           </div>
-          <div class="form-field"><label>Termín</label>
-            <select name="timeline"><option>Do měsíce</option><option>Do 2–3 měsíců</option><option>Q4 / Vánoce</option><option>Jen se orientuji</option></select>
+          <div class="form-field"><label for="f-timeline">Termín</label>
+            <select id="f-timeline" name="timeline"><option>Do měsíce</option><option>Do 2–3 měsíců</option><option>Q4 / Vánoce</option><option>Jen se orientuji</option></select>
           </div>
         </div>
         <div class="form-row-1">
-          <div class="form-field"><label>Pár slov k projektu (volitelné)</label><textarea name="message" placeholder="Event, cílová skupina, představa o produktu…"></textarea></div>
+          <div class="form-field"><label for="f-message">Pár slov k projektu (volitelné)</label><textarea id="f-message" name="message" placeholder="Event, cílová skupina, představa o produktu…"></textarea></div>
         </div>
         <button type="submit" class="form-submit">Odeslat poptávku
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -881,9 +886,9 @@ footer * { color: var(--cream); }
         <div class="footer-brand">wearetreed<span>.</span></div>
         <p class="footer-tag">Firemní dárky z naší dílny v Šumperku. České dřevo, ruční práce, vaše logo.</p>
       </div>
-      <div class="footer-col"><h4>Web</h4><ul><li><a href="#products">Co děláme?</a></li><li><a href="#process">Jak fungujeme?</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">O nás</a></li></ul></div>
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="#">Šumperk, ČR</a></li></ul></div>
-      <div class="footer-col"><h4>Sledujte</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Behance</a></li></ul></div>
+      <div class="footer-col"><h3>Web</h3><ul><li><a href="#products">Co děláme?</a></li><li><a href="#process">Jak fungujeme?</a></li><li><a href="#cases">Case studies</a></li><li><a href="#about">O nás</a></li></ul></div>
+      <div class="footer-col"><h3>Kontakt</h3><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><span>Šumperk, ČR</span></li></ul></div>
+      <div class="footer-col"><h3>Výroba</h3><ul><li><a href="https://formastudio.cz/">Forma Studio: CNC, laser, 3D tisk</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 wearetreed · Všechna práva vyhrazena</span><span>Vyrobeno v Česku</span></div>
   </div>
@@ -982,6 +987,22 @@ document.querySelectorAll('.lang a').forEach(function (a) {
 });
 </script>
 
+<script>
+// language hint: if the browser language differs from this page, offer the matching version (no automatic redirect)
+(function(){try{
+  var page=document.documentElement.lang.slice(0,2),nav=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase(),want=/^(cs|sk)/.test(nav)?'cs':/^de/.test(nav)?'de':/^en/.test(nav)?'en':'';
+  if(!want||want===page||localStorage.getItem('lang_hint_off')||localStorage.getItem('lang_pref')===page)return;
+  var alt=document.querySelector('link[rel="alternate"][hreflang="'+want+'"]');if(!alt)return;
+  var T={cs:['Tato stránka je i v češtině.','Číst česky →','Zavřít'],de:['Diese Seite gibt es auch auf Deutsch.','Auf Deutsch lesen →','Schließen'],en:['This page is also available in English.','Read in English →','Close']}[want];
+  var b=document.createElement('div');b.className='lang-hint';b.setAttribute('role','region');b.setAttribute('aria-label',T[0]);b.lang=want;
+  b.innerHTML='<span>'+T[0]+'</span> <a href="'+new URL(alt.href).pathname+'">'+T[1]+'</a><button type="button" aria-label="'+T[2]+'">×</button>';
+  b.style.cssText='background:#2E4B1E;color:#F0EFE9;font-size:14px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 44px 9px 16px;position:relative;text-align:center';
+  var a=b.querySelector('a');a.style.cssText='color:#B4DE9A;font-weight:600;text-decoration:underline;text-underline-offset:3px';
+  a.addEventListener('click',function(){try{localStorage.setItem('lang_pref',want);}catch(e){}});
+  var x=b.querySelector('button');x.style.cssText='position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:#F0EFE9;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px';
+  x.addEventListener('click',function(){b.remove();try{localStorage.setItem('lang_hint_off','1');}catch(e){}});
+  document.body.insertBefore(b,document.body.firstChild);
+}catch(e){}})();
+</script>
 </body>
 </html>
-                                                                                                                                                                              

@@ -10,15 +10,15 @@
 <meta property="og:site_name" content="wearetreed">
 <meta property="og:title" content="Direct mailer for Cloudflare. Case study">
 <meta property="og:description" content="How we built a custom direct mailer for Cloudflare. A wooden coin-bank shaped like the logo, a charger, wool socks and Czech chocolates. A package for the CTOs of the biggest Czech companies.">
-<meta property="og:image" content="https://wearetreed.com/images/case-cloudflare.jpg">
+<meta property="og:image" content="https://www.wearetreed.com/images/case-cloudflare.jpg">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://wearetreed.com/en/cloudflare">
-<link rel="alternate" hreflang="cs" href="https://wearetreed.com/cloudflare">
-<link rel="alternate" hreflang="en" href="https://wearetreed.com/en/cloudflare">
-<link rel="alternate" hreflang="de" href="https://wearetreed.com/de/cloudflare">
-<link rel="alternate" hreflang="x-default" href="https://wearetreed.com/cloudflare">
-<meta property="og:url" content="https://wearetreed.com/en/cloudflare">
+<link rel="canonical" href="https://www.wearetreed.com/en/cloudflare">
+<link rel="alternate" hreflang="cs" href="https://www.wearetreed.com/cloudflare">
+<link rel="alternate" hreflang="en" href="https://www.wearetreed.com/en/cloudflare">
+<link rel="alternate" hreflang="de" href="https://www.wearetreed.com/de/cloudflare">
+<link rel="alternate" hreflang="x-default" href="https://www.wearetreed.com/cloudflare">
+<meta property="og:url" content="https://www.wearetreed.com/en/cloudflare">
 <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <meta name="theme-color" content="#3C5F27">
@@ -165,9 +165,19 @@ footer * { color: var(--cream); }
 .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
 html.js-on .reveal { opacity: 0; transform: translateY(20px); }
 html.js-on .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* a11y: stronger contrast for buttons and language links */
+.btn { color: var(--olive-deep); }
+.lang a { opacity: 0.9; }
+/* footer headings are h3 now (heading order) */
+.footer-col h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: var(--mint); font-weight: 600; }
+.footer-col li span { color: rgba(240,239,233,0.8); font-size: 14px; }
+/* Forma Studio (own manufacturing) */
+.forma { background: var(--cream); }
+.forma .story-img { aspect-ratio: 3/2; }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Case study: Cloudflare direct mailer","description":"Cloudflare case study: gift packaging with engraved logo and a coin-bank shaped as the Cloudflare logo.","image":"https://wearetreed.com/images/case-cloudflare.jpg","inLanguage":"en-US","author":{"@type":"Organization","name":"wearetreed","url":"https://wearetreed.com"},"publisher":{"@type":"Organization","name":"wearetreed","logo":{"@type":"ImageObject","url":"https://wearetreed.com/images/logo-web.png"}},"mainEntityOfPage":"https://wearetreed.com/en/cloudflare"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wearetreed.com/en/"},{"@type":"ListItem","position":2,"name":"Case studies","item":"https://wearetreed.com/en/#cases"},{"@type":"ListItem","position":3,"name":"Cloudflare","item":"https://wearetreed.com/en/cloudflare"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Case study: Cloudflare direct mailer","description":"Cloudflare case study: gift packaging with engraved logo and a coin-bank shaped as the Cloudflare logo.","image":"https://www.wearetreed.com/images/case-cloudflare.jpg","inLanguage":"en-US","author":{"@type":"Organization","name":"wearetreed","url":"https://www.wearetreed.com"},"publisher":{"@type":"Organization","name":"wearetreed","logo":{"@type":"ImageObject","url":"https://www.wearetreed.com/images/logo-web.png"}},"mainEntityOfPage":"https://www.wearetreed.com/en/cloudflare"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.wearetreed.com/en/"},{"@type":"ListItem","position":2,"name":"Case studies","item":"https://www.wearetreed.com/en/#cases"},{"@type":"ListItem","position":3,"name":"Cloudflare","item":"https://www.wearetreed.com/en/cloudflare"}]}</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -183,12 +193,11 @@ html.js-on .reveal.visible { opacity: 1; transform: translateY(0); }
 </div>
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="/en/" class="logo"><img src="/images/logo-web.png" alt="wearetreed"></a>
+    <a href="/en/" class="logo"><img src="/images/logo-web.png" alt="wearetreed" width="191" height="26"></a>
     <ul class="nav-pills">
       <li><a href="/en/#products">What we do</a></li>
       <li><a href="/en/#process">How we work</a></li>
       <li><a href="/en/#cases">Case studies</a></li>
-      <li><a href="/en/" onclick="event.preventDefault()">Blog</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang">
@@ -347,9 +356,9 @@ html.js-on .reveal.visible { opacity: 1; transform: translateY(0); }
         <div class="footer-brand">wearetreed<span>.</span></div>
         <p class="footer-tag">Premium corporate gifts from a&nbsp;family workshop in the&nbsp;Šumperk region. Czech craft, sustainable materials, a story in every piece.</p>
       </div>
-      <div class="footer-col"><h4>Site</h4><ul><li><a href="/en/#products">What we do</a></li><li><a href="/en/#process">How we work</a></li><li><a href="/en/#cases">Case studies</a></li><li><a href="/en/#about">About us</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><a href="/en/">Šumperk, Czech Republic</a></li></ul></div>
-      <div class="footer-col"><h4>Follow</h4><ul><li><a href="/en/">Instagram</a></li><li><a href="/en/">LinkedIn</a></li><li><a href="/en/">Behance</a></li></ul></div>
+      <div class="footer-col"><h3>Site</h3><ul><li><a href="/en/#products">What we do</a></li><li><a href="/en/#process">How we work</a></li><li><a href="/en/#cases">Case studies</a></li><li><a href="/en/#about">About us</a></li></ul></div>
+      <div class="footer-col"><h3>Contact</h3><ul><li><a href="mailto:ahoj@wearetreed.com">ahoj@wearetreed.com</a></li><li><span>Šumperk, Czech Republic</span></li></ul></div>
+      <div class="footer-col"><h3>Manufacturing</h3><ul><li><a href="https://formastudio.cz/en">Forma Studio: CNC, laser, 3D printing</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 wearetreed · All rights reserved</span><span>Made in&nbsp;Czechia</span></div>
   </div>
@@ -372,5 +381,22 @@ document.querySelectorAll('.lang a').forEach(function (a) {
 });
 </script>
 
+<script>
+// language hint: if the browser language differs from this page, offer the matching version (no automatic redirect)
+(function(){try{
+  var page=document.documentElement.lang.slice(0,2),nav=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase(),want=/^(cs|sk)/.test(nav)?'cs':/^de/.test(nav)?'de':/^en/.test(nav)?'en':'';
+  if(!want||want===page||localStorage.getItem('lang_hint_off')||localStorage.getItem('lang_pref')===page)return;
+  var alt=document.querySelector('link[rel="alternate"][hreflang="'+want+'"]');if(!alt)return;
+  var T={cs:['Tato stránka je i v češtině.','Číst česky →','Zavřít'],de:['Diese Seite gibt es auch auf Deutsch.','Auf Deutsch lesen →','Schließen'],en:['This page is also available in English.','Read in English →','Close']}[want];
+  var b=document.createElement('div');b.className='lang-hint';b.setAttribute('role','region');b.setAttribute('aria-label',T[0]);b.lang=want;
+  b.innerHTML='<span>'+T[0]+'</span> <a href="'+new URL(alt.href).pathname+'">'+T[1]+'</a><button type="button" aria-label="'+T[2]+'">×</button>';
+  b.style.cssText='background:#2E4B1E;color:#F0EFE9;font-size:14px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 44px 9px 16px;position:relative;text-align:center';
+  var a=b.querySelector('a');a.style.cssText='color:#B4DE9A;font-weight:600;text-decoration:underline;text-underline-offset:3px';
+  a.addEventListener('click',function(){try{localStorage.setItem('lang_pref',want);}catch(e){}});
+  var x=b.querySelector('button');x.style.cssText='position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:#F0EFE9;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px';
+  x.addEventListener('click',function(){b.remove();try{localStorage.setItem('lang_hint_off','1');}catch(e){}});
+  document.body.insertBefore(b,document.body.firstChild);
+}catch(e){}})();
+</script>
 </body>
 </html>
