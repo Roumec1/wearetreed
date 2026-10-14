@@ -364,6 +364,18 @@ footer * { color: var(--cream); }
 /* Forma Studio (own manufacturing) */
 .forma { background: var(--cream); }
 .forma .story-img { aspect-ratio: 3/2; }
+
+/* a11y: text contrast >= 4.5:1 (same colours, less transparency) */
+.eyebrow { opacity: 1; }
+.cta-sub, .cta-promise { color: var(--olive-deep); opacity: 1; }
+.cta-promise::before { color: var(--olive-deep); }
+.form-field label { opacity: 1; }
+.diff-head-row > div:first-child, .diff-head-row .o { color: rgba(240,239,233,0.85); }
+.diff-head-row .t { color: var(--mint-bright); }
+.diff-cell.lose { opacity: 1; color: #55634a; }
+.diff-cell.lose::before { opacity: 1; }
+.stat-source, .footer-tag, .footer-bottom { color: rgba(240,239,233,0.85); }
+.footer-col h3 { color: var(--mint-bright); }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"wearetreed","url":"https://www.wearetreed.com","logo":"https://www.wearetreed.com/images/logo-web.png","description":"Firmengeschenke aus tschechischem Holz. Handgefertigt in Šumperk.","address":{"@type":"PostalAddress","addressLocality":"Šumperk","addressCountry":"CZ"},"email":"ahoj@wearetreed.com"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.wearetreed.com","name":"wearetreed","inLanguage":"de-DE"}</script>
@@ -834,7 +846,7 @@ footer * { color: var(--cream); }
 <section class="cta" id="cta">
   <div class="container">
     <div class="cta-inner">
-      <span class="eyebrow" style="color: var(--olive); opacity: 0.9;">Lassen Sie uns starten</span>
+      <span class="eyebrow" style="color: var(--olive-deep);">Lassen Sie uns starten</span>
       <h2 style="margin-top: 14px;">Senden Sie ein Briefing. Wir antworten innerhalb von 24 Stunden</h2>
       <p class="cta-sub">Kurz und knapp. Was Sie brauchen, für wen und bis wann. Den Rest klären wir gemeinsam.</p>
       <form class="cta-form"
