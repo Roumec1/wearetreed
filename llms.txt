@@ -1,0 +1,25 @@
+# wearetreed
+
+> wearetreed makes corporate gifts with your logo from Czech wood, by hand, in a family workshop near Šumperk, Czech Republic (EU). Design, production, packaging and delivery from one place, from 10 pieces. Run by Wearetreed s.r.o.
+
+Key facts:
+
+- Products: solid-oak wireless chargers, oak storage cube with wireless charging, laptop stands (cork feet, linen bag), walnut-bound notebooks, custom gift packaging and unboxing, plus custom products to your brief.
+- Materials: oak, walnut, ash; cork from Portugal, mycelium from Kyjov, beeswax finish. No plastic.
+- Logo laser-engraved into the wood. Minimum order usually 10 pieces with engraving; samples available before the order.
+- Production usually 1–4 weeks depending on personalisation and quantity; shipped to one address or many, in custom packaging.
+- Clients include Cloudflare (direct mailer for CTOs), Myco (world's first car perfume made from mycelium), Bohemia Interactive (DayZ merch), Mastercard, Lynk & Co and Green Cat. More than 50 companies so far.
+- The same workshop runs Forma Studio for contract manufacturing (CNC milling, laser, 3D printing): https://formastudio.cz
+- Address: Wearetreed s.r.o., Za školou 783, 789 61 Bludov, Czech Republic. Email: ahoj@wearetreed.com
+
+## Pages
+
+- [Corporate gifts (English)](https://www.wearetreed.com/en)
+- [Firmengeschenke (Deutsch)](https://www.wearetreed.com/de)
+- [Firemní dárky (Čeština)](https://www.wearetreed.com/)
+
+## Case studies
+
+- [Cloudflare: direct mailer for enterprise sales](https://www.wearetreed.com/en/cloudflare)
+- [Myco: mushroom car perfume](https://www.wearetreed.com/en/myco)
+- [Bohemia Interactive: wooden merch for DayZ](https://www.wearetreed.com/en/bohemia)
